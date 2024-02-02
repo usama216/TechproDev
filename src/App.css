@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+  html {
+    font-size: calc (10px + 1vmin);
+  }
+
+  /* NavBar.css */
+
+.navbar-container {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2rem;
+  }
+
+  .navbar-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+  }
+
+  /* Add more styles for responsiveness and other screen sizes if needed */
+
