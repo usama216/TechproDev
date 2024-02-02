@@ -9,7 +9,7 @@ const OurExpertise = () => {
 
 <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', color:'white', textAlign:'center'}}>
 <Typography sx={{fontSize:'2.5rem', }}>OUR EXPERTISE </Typography>
-<Typography>Empowering progress through innovative tech solutions at TechProdDev</Typography>
+{/* <Typography>Empowering progress through innovative tech solutions at TechProdDev</Typography> */}
 </Box>
 
 </Box>
