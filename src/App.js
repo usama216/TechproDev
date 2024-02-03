@@ -5,7 +5,8 @@ import PortfolioIndex from './Pages/Portfolio/PortfolioIndex';
 import AboutIndex from './Pages/About/AboutIndex';
 import ServicesIndex from './Pages/Services/ServicesIndex';
 import BlogsIndex from './Pages/Blogs/BlogsIndex';
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 function App() {
