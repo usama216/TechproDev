@@ -12,25 +12,22 @@ const HeroSection = () => {
           backgroundSize: "contain",
           backgroundRepeat: "none",
           height: "100vh",
-marginTop:'1rem',
+          marginTop: "1rem",
           width: "100%",
           "@media(max-width:480px)": {
-             height:'50vh',
-          backgroundSize: "cover",
-          marginTop:'0rem'
-
-
-            },
-            "@media(min-width:481px) ": {
-                backgroundSize: "cover",
-            },
-
+            height: "50vh",
+            backgroundSize: "cover",
+            marginTop: "0rem",
+          },
+          "@media(min-width:481px) ": {
+            backgroundSize: "cover",
+          },
         }}
       >
         <Box
           sx={{
             color: "black",
-paddingTop:'5rem',
+            paddingTop: "5rem",
             minHeight: "80vh",
             display: "flex",
 
@@ -41,9 +38,8 @@ paddingTop:'5rem',
             "@media(max-width:480px)": {
               paddingLeft: "0rem",
               paddingRight: "0rem",
-              paddingTop:'0rem',
-            minHeight: "40vh",
-
+              paddingTop: "0rem",
+              minHeight: "40vh",
             },
             "@media(min-width:481px) and (max-width:768px)": {
               paddingLeft: "10%",
@@ -74,13 +70,12 @@ paddingTop:'5rem',
               sx={{
                 "@media(max-width:480px)": {
                   fontSize: "1.2rem",
-                  fontWeight:"800",
+                  fontWeight: "800",
                   width: "100%",
-                //   fontWeight: "600",
+                  //   fontWeight: "600",
                   paddingLeft: "2%",
                   paddingRight: "2%",
-                  textAlign:'center'
-
+                  textAlign: "center",
                 },
                 "@media(min-width:480px) and (max-width:900px)": {
                   fontSize: "3rem",
@@ -112,10 +107,9 @@ paddingTop:'5rem',
                   fontWeight: "800",
                   paddingLeft: "2%",
                   paddingRight: "2%",
-                  paddingTop:'0.5rem',
+                  paddingTop: "0.5rem",
 
-                  textAlign:'center'
-
+                  textAlign: "center",
                 },
                 "@media(min-width:480px) and (max-width:900px)": {
                   fontSize: "3rem",
@@ -146,8 +140,8 @@ paddingTop:'5rem',
                   fontWeight: "800",
                   paddingLeft: "0%",
                   paddingRight: "0%",
-paddingTop:'0.5rem',
-                  textAlign:'center'
+                  paddingTop: "0.5rem",
+                  textAlign: "center",
                 },
                 "@media(min-width:480px) and (max-width:900px)": {
                   fontSize: "3rem",
@@ -165,56 +159,53 @@ paddingTop:'0.5rem',
             >
               SERVICES
             </Typography>
-
           </Box>
 
-
           <Typography
-              variant="h3"
-              fontSize={"1.3rem"}
-fontWeight={'600'}
-              marginTop={'5rem'}
-              width="100%"
-
-              sx={{
-                paddingLeft:'20%',
-                "@media(max-width:480px)": {
-
-                  display:'none'
-                },
-                "@media(min-width:480px) and (max-width:900px)": {
-                  fontSize: "3rem",
-                  width: "100%",
-                  paddingLeft: "0%",
-                  paddingRight: "0%",
-                },
-                "@media(min-width:901px) and (max-width:1024px)": {
-                  fontSize: "3rem",
-                  width: "100%",
-                  paddingLeft: "0%",
-                  paddingRight: "0%",
-                },
-              }}
-            >
-             Successful innovations
-             <br/>
-
-
-             for ambitious brands
-
-            </Typography>
-
+            variant="h3"
+            fontSize={"1.3rem"}
+            fontWeight={"600"}
+            marginTop={"5rem"}
+            width="100%"
+            sx={{
+              paddingLeft: "20%",
+              "@media(max-width:480px)": {
+                display: "none",
+              },
+              "@media(min-width:480px) and (max-width:900px)": {
+                fontSize: "3rem",
+                width: "100%",
+                paddingLeft: "0%",
+                paddingRight: "0%",
+              },
+              "@media(min-width:901px) and (max-width:1024px)": {
+                fontSize: "3rem",
+                width: "100%",
+                paddingLeft: "0%",
+                paddingRight: "0%",
+              },
+            }}
+          >
+            Successful innovations
+            <br />
+            for ambitious brands
+          </Typography>
         </Box>
 
-      <Box sx={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-      <Button
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Button
             data-aos="fade-up"
             data-aos-duration="1500"
             variant="outlined"
             sx={{
-
               color: "white",
-             backgroundColor:'#00a0d5',
+              backgroundColor: "#00a0d5",
               cursor: "pointer",
               fontSize: "1rem",
               paddingTop: "0.4rem",
@@ -222,20 +213,18 @@ fontWeight={'600'}
               borderRadius: "25px",
               paddingLeft: "1.6rem",
               paddingRight: "1.6rem",
-              textTransform:'none',
+              textTransform: "none",
               "@media(max-width:480px)": {
-
-marginTop:'0rem',
-paddingTop:'0.1rem',
-paddingBottom:'0.1rem',
-fontSize:'0.8rem'
-},
+                marginTop: "0rem",
+                paddingTop: "0.1rem",
+                paddingBottom: "0.1rem",
+                fontSize: "0.8rem",
+              },
             }}
           >
-           Explore Our Services
+            Explore Our Services
           </Button>
-
-      </Box>
+        </Box>
       </Box>
     </>
   );

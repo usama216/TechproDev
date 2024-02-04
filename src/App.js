@@ -7,6 +7,7 @@ import ServicesIndex from './Pages/Services/ServicesIndex';
 import BlogsIndex from './Pages/Blogs/BlogsIndex';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ContactusIndex from './Pages/Contactus/ContactusIndex';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
     <Route path='/aboutus' element={<AboutIndex/>}/>
     <Route path='/services' element={<ServicesIndex/>}/>
     <Route path='/blogs' element={<BlogsIndex/>}/>
+    <Route path='/contactus' element={<ContactusIndex/>}/>
+
   </Routes>
 
 
