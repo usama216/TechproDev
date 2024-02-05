@@ -63,6 +63,8 @@ into reality and propel your business forward.
                       textTransform:'none',
                       backgroundColor: "#f3f4f6",
                       color:'#3B82F6',
+                      '&:hover': {
+      backgroundColor: '#f3f4f6'},
                       "@media (max-width: 480px)": {
                         fontSize: "0.8rem",
                         fontWeight: "semi-bold",

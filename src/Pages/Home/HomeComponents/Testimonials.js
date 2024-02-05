@@ -26,38 +26,38 @@ const testimonialsData = [
     rating: 5.0,
   },
   {
-    id: 1,
+    id: 4,
     role: "Marketing Manager",
     companyName: "Company 1",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
     rating: 5.0,
   },
   {
-    id: 1,
+    id: 5,
     role: "Marketing Manager",
     companyName: "Company 1",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
     rating: 5.0,
   },{
-    id: 1,
+    id: 6,
     role: "Marketing Manager",
     companyName: "Company 1",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
     rating: 5.0,
   },{
-    id: 1,
+    id: 7,
     role: "Marketing Manager",
     companyName: "Company 1",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
     rating: 5.0,
   },{
-    id: 1,
+    id: 8,
     role: "Marketing Manager",
     companyName: "Company 1",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
     rating: 5.0,
   },{
-    id: 1,
+    id: 9,
     role: "Marketing Manager",
     companyName: "Company 1",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
@@ -101,8 +101,8 @@ const Testimonials = () => (
     </Box>
 
     <Grid container gap={"2rem"} marginTop={"3rem"}>
-      {testimonialsData.map((testimonial) => (
-        <TestimonialCard key={testimonial.id} {...testimonial} />
+      {testimonialsData.map((testimonial, index) => (
+        <TestimonialCard key={index} {...testimonial} style={{ display: index >= 3 ? 'none' : 'block' }}/>
       ))}
     </Grid>
   </Box>
