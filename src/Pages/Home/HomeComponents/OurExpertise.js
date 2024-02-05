@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Mobile from "../../../Assets/Expertise/Mobile.svg";
 import WebApp from "../../../Assets/Expertise/WebApp.svg";
 import SMM from "../../../Assets/Expertise/SMM.svg";
@@ -10,18 +10,21 @@ import WebIcon from "../../../Assets/Expertise/WebIcon.svg";
 import MobIcon from "../../../Assets/Expertise/MobIcon.svg";
 
 const OurExpertise = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const slider1 = useRef(null);
 
-  useEffect(() => {
-    if (slider1.current) {
-      slider1.current.slickGoTo(activeIndex);
-    }
-  }, [activeIndex]);
+
+
+  const storedActiveIndex = parseInt(localStorage.getItem("activeIndex")) || 0;
+  const [activeIndex, setActiveIndex] = useState(storedActiveIndex);
 
   const handleSectionClick = (index) => {
+    // Update local state
     setActiveIndex(index);
   };
+
+  // Save activeIndex to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem("activeIndex", activeIndex);
+  }, [activeIndex]);
 
   return (
     <>
@@ -73,299 +76,113 @@ const OurExpertise = () => {
 
         <div>
           <div>
-            {activeIndex === 0 && (
-              <div>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    textAlign: "center",
-                    color: "white",
-                    marginTop: "1rem",
-                  }}
-                >
-                  <Box>
-                    <img
-                      src={WebApp}
-                      alt="Web Application Development"
-                      width={"100%"}
-                      height={"auto"}
-                    />
-                  </Box>
-
-                  <Typography
-                    variant="h2"
-                    fontSize={"3rem"}
-                    marginTop={"1.5rem"}
-                    sx={{
-                      "@media (max-width: 480px)": {
-                        fontSize: "1.5rem",
-                        fontWeight: "bold",
-                      },
-                    }}
-                  >
-                    Web App Design & Development
-                  </Typography>
-                  <Typography
-                    variant="subtitle"
-                    fontSize={"1rem"}
-                    width="70%"
-                    marginTop={"1.5rem"}
-                    sx={{
-                      "@media (max-width: 480px)": {
-                        fontSize: "0.8rem",
-                        width: "100%",
-                      },
-                    }}
-                  >
-                    Transforming ideas into interactive and user-friendly web
-                    applications, we craft seamless digital experiences tailored
-                    to your business objectives, ensuring scalability and
-                    performance at every stage.
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      marginTop: "3rem",
-                      fontSize: "1rem",
-                      borderRadius: "15px",
-                      backgroundColor: "#1d4ed8",
-                      "@media (max-width: 480px)": {
-                        fontSize: "0.8rem",
-                        fontWeight: "semi-bold",
-                        textTransform: "none",
-                        marginTop: "1.5rem",
-                      },
-                    }}
-                  >
-                    Get Started
-                  </Button>
-                </Box>
-              </div>
-            )}
-            {activeIndex === 1 && (
-              <div>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    textAlign: "center",
-                    color: "white",
-                    marginTop: "3rem",
-                  }}
-                >
-                  {/* <img src={Mobile} alt='Mobile Application Development' width={'30%'}/> */}
-
-                  <Box>
-                    <img
-                      src={Mobile}
-                      alt="Mobile Application Development"
-                      width={"100%"}
-                      height={"auto"}
-                    />
-                  </Box>
-
-                  <Typography
-                    variant="h2"
-                    fontSize={"3rem"}
-                    marginTop={"1.5rem"}
-                    sx={{
-                      "@media (max-width: 480px)": {
-                        fontSize: "1.5rem",
-                        fontWeight: "bold",
-                      },
-                    }}
-                  >
-                    Mobile App Design & Development
-                  </Typography>
-                  <Typography
-                    variant="subtitle"
-                    fontSize={"1rem"}
-                    width="70%"
-                    marginTop={"1.5rem"}
-                    sx={{
-                      "@media (max-width: 480px)": {
-                        fontSize: "0.8rem",
-                        width: "100%",
-                      },
-                    }}
-                  >
-                    Transforming ideas into interactive and user-friendly mobile
-                    applications, we craft seamless digital experiences tailored
-                    to your business objectives, ensuring scalability and
-                    performance at every stage.
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      marginTop: "3rem",
-                      fontSize: "1rem",
-                      borderRadius: "15px",
-                      backgroundColor: "#1d4ed8",
-                      "@media (max-width: 480px)": {
-                        fontSize: "0.8rem",
-                        fontWeight: "semi-bold",
-                        textTransform: "none",
-                        marginTop: "1.5rem",
-                      },
-                    }}
-                  >
-                    Get Started
-                  </Button>
-                </Box>
-              </div>
-            )}
-            {activeIndex === 2 && (
-              <div>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    textAlign: "center",
-                    color: "white",
-                    marginTop: "3rem",
-                  }}
-                >
-                  <Box>
-                    <img
-                      src={SEO}
-                      alt="Search Engine Optimization"
-                      width={"100%"}
-                      height={"auto"}
-                    />
-                  </Box>
-
-                  <Typography
-                    variant="h2"
-                    fontSize={"3rem"}
-                    marginTop={"1.5rem"}
-                    sx={{
-                      "@media (max-width: 480px)": {
-                        fontSize: "1.5rem",
-                        fontWeight: "bold",
-                      },
-                    }}
-                  >
-                    Search Engine Optimization
-                  </Typography>
-                  <Typography
-                    variant="subtitle"
-                    fontSize={"1rem"}
-                    width="70%"
-                    marginTop={"1.5rem"}
-                    sx={{
-                      "@media (max-width: 480px)": {
-                        fontSize: "0.8rem",
-                        width: "100%",
-                      },
-                    }}
-                  >
-                    Transforming ideas into interactive and user-friendly web
-                    applications, we craft seamless digital experiences tailored
-                    to your business objectives, ensuring scalability and
-                    performance at every stage.
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      marginTop: "3rem",
-                      fontSize: "1rem",
-                      borderRadius: "15px",
-                      backgroundColor: "#1d4ed8",
-                      "@media (max-width: 480px)": {
-                        fontSize: "0.8rem",
-                        fontWeight: "semi-bold",
-                        textTransform: "none",
-                        marginTop: "1.5rem",
-                      },
-                    }}
-                  >
-                    Get Started
-                  </Button>
-                </Box>
-              </div>
-            )}
-            {activeIndex === 3 && (
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexDirection: "column",
-                  textAlign: "center",
-                  color: "white",
-                  marginTop: "2rem",
-                  "@media (max-width: 480px)": {
-                    paddingTop: "2rem",
-                  },
+            {[0, 1, 2, 3].map((index) => (
+              <div
+                key={index}
+                style={{
+                  opacity: activeIndex === index ? 1 : 0,
+                  transition: "opacity 0.5s ease-in-out",
                 }}
               >
-                <Box>
-                  <img
-                    src={SMM}
-                    alt="Web Application Development"
-                    width={"100%"}
-                    height={"auto"}
-                  />
-                </Box>
+                {activeIndex === index && (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexDirection: "column",
+                      textAlign: "center",
+                      color: "white",
 
-                <Typography
-                  variant="h2"
-                  fontSize={"3rem"}
-                  marginTop={"0.5rem"}
-                  sx={{
-                    "@media (max-width: 480px)": {
-                      fontSize: "1.5rem",
-                      fontWeight: "bold",
-                    },
-                  }}
-                >
-                  Social Media Marketing
-                </Typography>
-                <Typography
-                  variant="subtitle"
-                  fontSize={"1rem"}
-                  width="70%"
-                  marginTop={"1.5rem"}
-                  sx={{
-                    "@media (max-width: 480px)": {
-                      fontSize: "0.8rem",
-                      width: "100%",
-                    },
-                  }}
-                >
-                  Transforming ideas into interactive and user-friendly web
-                  applications, we craft seamless digital experiences tailored
-                  to your business objectives, ensuring scalability and
-                  performance at every stage.
-                </Typography>
-                <Button
-                  variant="contained"
-                  sx={{
-                    marginTop: "3rem",
-                    fontSize: "1rem",
-                    borderRadius: "15px",
-                    backgroundColor: "#1d4ed8",
-                    "@media (max-width: 480px)": {
-                      fontSize: "0.8rem",
-                      fontWeight: "semi-bold",
-                      textTransform: "none",
-                      marginTop: "1.5rem",
-                    },
-                  }}
-                >
-                  Get Started
-                </Button>
-              </Box>
-            )}
+                    }}
+                  >
+                    <Box>
+                      <img
+                        src={
+                          index === 0
+                            ? WebApp
+                            : index === 1
+                            ? Mobile
+                            : index === 2
+                            ? SEO
+                            : SMM
+                        }
+                        alt={
+                          index === 0
+                            ? "Web Application Development"
+                            : index === 1
+                            ? "Mobile Application Development"
+                            : index === 2
+                            ? "Search Engine Optimization"
+                            : "Social Media Marketing"
+                        }
+                        width={"100%"}
+                        height={"auto"}
+                        style={{ objectFit: "cover" }}
+                      />
+                    </Box>
+
+                    <Typography
+                      variant="h2"
+                      fontSize={"3rem"}
+
+
+                      sx={{
+                        "@media (max-width: 480px)": {
+                          fontSize: "1.5rem",
+                          fontWeight: "bold",
+                        },
+                      }}
+                    >
+                      {index === 0
+                        ? "Web App Design & Development"
+                        : index === 1
+                        ? "Mobile App Design & Development"
+                        : index === 2
+                        ? "Search Engine Optimization"
+                        : "Social Media Marketing"}
+                    </Typography>
+                    <Typography
+                      variant="subtitle"
+                      fontSize={"1rem"}
+                      width="70%"
+                      marginTop={"1.5rem"}
+                      sx={{
+                        "@media (max-width: 480px)": {
+                          fontSize: "0.8rem",
+                          width: "100%",
+                        },
+                      }}
+                    >
+                      Transforming ideas into interactive and user-friendly web
+                      applications, we craft seamless digital experiences tailored
+                      to your business objectives, ensuring scalability and
+                      performance at every stage.
+                    </Typography>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        marginTop: "3rem",
+                        fontSize: "1rem",
+                        borderRadius: "15px",
+                        backgroundColor: "#1d4ed8",
+                        "@media (max-width: 480px)": {
+                          fontSize: "0.8rem",
+                          fontWeight: "semi-bold",
+                          textTransform: "none",
+                          marginTop: "1.5rem",
+                        },
+                      }}
+                    >
+                      Get Started
+                    </Button>
+                  </Box>
+                )}
+              </div>
+            ))}
           </div>
 
+          {/* Your existing section menu for larger screens */}
           <Box
             sx={{
               display: "flex",
@@ -377,54 +194,38 @@ const OurExpertise = () => {
               },
             }}
           >
-            <div
-              onClick={() => handleSectionClick(0)}
-              style={{
-                borderRadius: "15px 0px 0px 15px",
-                backgroundColor: "white",
-                padding: "2rem",
-                cursor: "pointer",
-                flex: 1,
-              }}
-            >
-              <Box>Web Application Design & Development</Box>
-            </div>
-            <div
-              onClick={() => handleSectionClick(1)}
-              style={{
-                backgroundColor: "white",
-                padding: "2rem",
-                cursor: "pointer",
-                flex: 1,
-              }}
-            >
-              <Box>Mobile Application Design & Development</Box>
-            </div>
-            <div
-              onClick={() => handleSectionClick(2)}
-              style={{
-                backgroundColor: "white",
-                padding: "2rem",
-                cursor: "pointer",
-                flex: 1,
-              }}
-            >
-              <Box>Search Engine Optimization</Box>
-            </div>
-            <div
-              onClick={() => handleSectionClick(3)}
-              style={{
-                borderRadius: "0px 15px 15px 0px",
-                backgroundColor: "white",
-                padding: "2rem",
-                cursor: "pointer",
-                flex: 1,
-              }}
-            >
-              <Box>Social Media Marketing</Box>
-            </div>
+            {[0, 1, 2, 3].map((index) => (
+              <div
+                key={index}
+                onClick={() => handleSectionClick(index)}
+                style={{
+                  borderRadius:
+                    index === 0
+                      ? "15px 0px 0px 15px"
+                      : index === 3
+                      ? "0px 15px 15px 0px"
+                      : "0px",
+                  // backgroundColor: activeIndex === index ? "red" : "white",
+                  background: activeIndex === index ? "linear-gradient(180deg, #1E4F8E, #4fb0d8)" : "linear-gradient(90deg, white, white)",
+                  color: activeIndex === index ? "#ffffff" : "black",
+                  padding: "2rem",
+                  cursor: "pointer",
+                  flex: 1,
+                  transition: "background-color 0.3s ease-in-out",
+                  opacity: activeIndex === index ? 1 : 1,
+                }}
+              >
+                <Box sx={{textAlign:'center'}}>
+                  {index === 0 && "Web Application Design & Development"}
+                  {index === 1 && "Mobile Application Design & Development"}
+                  {index === 2 && "Search Engine Optimization"}
+                  {index === 3 && "Social Media Marketing"}
+                </Box>
+              </div>
+            ))}
           </Box>
 
+          {/* Your existing section menu for smaller screens */}
           <Box
             sx={{
               display: "flex",
@@ -436,92 +237,48 @@ const OurExpertise = () => {
               },
             }}
           >
-            <div
-              onClick={() => handleSectionClick(0)}
-              style={{
-                borderRadius: "15px 0px 0px 15px",
-                backgroundColor: "white",
-                padding: "1rem",
-                cursor: "pointer",
-                flex: 1,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Box>
-                <img
-                  src={WebIcon}
-                  alt="Web Application Development"
-                  width={"100%"}
-                  height={"auto"}
-                />
-              </Box>
-            </div>
-            <div
-              onClick={() => handleSectionClick(1)}
-              style={{
-                backgroundColor: "white",
-                padding: "1rem",
-                cursor: "pointer",
-                flex: 1,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Box>
-                <img
-                  src={MobIcon}
-                  alt="Web Application Development"
-                  width={"100%"}
-                  height={"auto"}
-                />
-              </Box>
-            </div>
-            <div
-              onClick={() => handleSectionClick(2)}
-              style={{
-                backgroundColor: "white",
-                padding: "1rem",
-                cursor: "pointer",
-                flex: 1,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Box>
-                <img
-                  src={SEOIcon}
-                  alt="Web Application Development"
-                  width={"100%"}
-                  height={"auto"}
-                />
-              </Box>
-            </div>
-            <div
-              onClick={() => handleSectionClick(3)}
-              style={{
-                borderRadius: "0px 15px 15px 0px",
-                backgroundColor: "white",
-                padding: "1rem",
-                cursor: "pointer",
-                flex: 1,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Box>
-                <img
-                  src={SMMIcon}
-                  alt="Web Application Development"
-                  width={"100%"}
-                  height={"auto"}
-                />
-              </Box>
-            </div>
+            {[0, 1, 2, 3].map((index) => (
+              <div
+                key={index}
+                onClick={() => handleSectionClick(index)}
+                style={{
+                  borderRadius:
+                    index === 0
+                      ? "15px 0px 0px 15px"
+                      : index === 3
+                      ? "0px 15px 15px 0px"
+                      : "0px",
+                      background: activeIndex === index ? "linear-gradient(180deg, #1E4F8E, #4fb0d8)" : "linear-gradient(90deg, white, white)",
+                  color: activeIndex === index ? "#ffffff" : "black",
+                  padding: "1rem",
+                  cursor: "pointer",
+                  flex: 1,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  transition: "background-color 0.3s ease-in-out",
+                  opacity: activeIndex === index ? 1 : 1,
+                }}
+              >
+                <Box>
+                  <img
+                    src={
+                      index === 0
+                        ? WebIcon
+                        : index === 1
+                        ? MobIcon
+                        : index === 2
+                        ? SEOIcon
+                        : SMMIcon
+                    }
+                    alt="Web Application Development"
+                    width={"100%"}
+                    height={"auto"}
+
+                  />
+                </Box>
+              </div>
+            ))}
           </Box>
         </div>
       </Box>

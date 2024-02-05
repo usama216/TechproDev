@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Rating, Stack, Typography } from "@mui/material";
+import { Box, Grid, Rating, Stack, Typography,  useMediaQuery } from "@mui/material";
 import Mypic from "../../../Assets/Testimonials/mypic.png";
 
 const testimonialsData = [
@@ -89,23 +89,28 @@ const TestimonialCard = ({ id, role, companyName, content, rating }) => (
   </Grid>
 );
 
-const Testimonials = () => (
-  <Box sx={{ paddingLeft: "8%", paddingRight: "8%", paddingTop: "4rem", paddingBottom: "4rem" }}>
-    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", color: "#1E4F8E", textAlign: "center" }}>
-      <Typography sx={{ fontSize: "2.5rem", fontWeight: "bold", "@media (max-width: 480px)": { fontSize: "1.5rem" } }}>
-        TESTIMONIALS
-      </Typography>
-      <Typography sx={{ fontSize: "1rem", "@media (max-width: 480px)": { fontSize: "1rem" } }}>
-        Don’t just take our word for it, have a look at what our clients had to say.
-      </Typography>
-    </Box>
+const Testimonials = () => {
+  const isMobile = useMediaQuery("(max-width: 600px)");
 
-    <Grid container gap={"2rem"} marginTop={"3rem"}>
-      {testimonialsData.map((testimonial, index) => (
-        <TestimonialCard key={index} {...testimonial} style={{ display: index >= 3 ? 'none' : 'block' }}/>
-      ))}
-    </Grid>
-  </Box>
-);
+  return (
+    <Box sx={{ paddingLeft: "8%", paddingRight: "8%", paddingTop: "4rem", paddingBottom: "4rem" }}>
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", color: "#1E4F8E", textAlign: "center" }}>
+        <Typography sx={{ fontSize: "2.5rem", fontWeight: "bold", "@media (max-width: 480px)": { fontSize: "1.5rem" } }}>
+          TESTIMONIALS
+        </Typography>
+        <Typography sx={{ fontSize: "1rem", "@media (max-width: 480px)": { fontSize: "1rem" } }}>
+          Don’t just take our word for it, have a look at what our clients had to say.
+        </Typography>
+      </Box>
+
+      <Grid container gap={"2rem"} marginTop={"3rem"}>
+        {testimonialsData.slice(0, isMobile ? 3 : undefined).map((testimonial, index) => (
+          <TestimonialCard key={index} {...testimonial} />
+        ))}
+      </Grid>
+    </Box>
+  );
+};
+
 
 export default Testimonials;

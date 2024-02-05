@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import HeroSectionImage from "../../../Assets/HeroSectionImage.png";
+import { Typewriter } from "react-simple-typewriter";
+
 
 const HeroSection = () => {
   return (
@@ -55,11 +57,18 @@ const HeroSection = () => {
           <Box
             data-aos="fade-up"
             data-aos-duration="1500"
-            minHeight={"8rem"}
+            minHeight={"9rem"}
+            position={'relative'}
             sx={{
+              width:'100%',
+              paddingLeft:'15%',
+              paddingRight:'15%',
               "@media(max-width:480px)": {
-                minHeight: "0rem",
+                minHeight: "8rem",
+                paddingLeft:'10%',
+              paddingRight:'10%',
               },
+
             }}
           >
             <Typography
@@ -100,6 +109,7 @@ const HeroSection = () => {
               fontWeight={"800"}
               width="100%"
               color="#0f65a0"
+
               sx={{
                 "@media(max-width:480px)": {
                   fontSize: "1.2rem",
@@ -125,23 +135,44 @@ const HeroSection = () => {
                 },
               }}
             >
-              MOBILE APP DESIGN & DEVELOPMENT
+              <Typewriter
+                  words={[
+                    "WEB APP DESIGN & DEVELOPMENT",
+                    "MOBILE APP DESIGN & DEVELOPMENT",
+                    "SEARCH ENGINE OPTIMIZATION",
+                    "SOCIAL MEDIA MARKETING",
+
+                  ]}
+                  loop={Infinity}
+                  typeSpeed={60}
+                  deleteSpeed={40}
+                  delaySpeed={1600}
+                />
             </Typography>
 
+            <Box>
             <Typography
               variant="h3"
               fontSize={"2.5rem"}
               fontWeight={"800"}
               width="100%"
+
+
               sx={{
+              paddingLeft:'15%',
+bottom:0,
+left:0,
+position:'absolute',
                 "@media(max-width:480px)": {
                   fontSize: "1.2rem",
                   width: "100%",
                   fontWeight: "800",
                   paddingLeft: "0%",
                   paddingRight: "0%",
-                  paddingTop: "0.5rem",
+
                   textAlign: "center",
+                  left:0
+
                 },
                 "@media(min-width:480px) and (max-width:900px)": {
                   fontSize: "3rem",
@@ -155,10 +186,14 @@ const HeroSection = () => {
                   paddingLeft: "0%",
                   paddingRight: "0%",
                 },
+
+
+
               }}
             >
               SERVICES
             </Typography>
+            </Box>
           </Box>
 
           <Typography
