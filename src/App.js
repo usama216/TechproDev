@@ -19,7 +19,7 @@ function App() {
     <Route path='/portfolio' element={<PortfolioIndex/>}/>
     <Route path='/aboutus' element={<AboutIndex/>}/>
     <Route path='/services' element={<ServicesIndex/>}/>
-    <Route path='/blogs' element={<BlogsIndex/>}/>
+    <Route path='/blog' element={<BlogsIndex/>}/>
     <Route path='/contactus' element={<ContactusIndex/>}/>
 
   </Routes>

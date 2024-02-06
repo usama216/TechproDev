@@ -1,8 +1,15 @@
 import React from 'react'
+import NavBar from '../../components/NavBar'
+import Footer from '../../components/Footer'
+import AboutComponent from './AboutComponents/AboutComponent'
 
 const AboutIndex = () => {
   return (
-    <div>AboutIndex</div>
+    <>
+      <NavBar/>
+<AboutComponent/>
+      <Footer/>
+    </>
   )
 }
 
