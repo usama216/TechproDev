@@ -118,7 +118,7 @@ const ContactUs = () => {
                     display: "flex",
                     alignItems: "start",
                     flexDirection: "column",
-                  
+
                     justifyContent: "center",
                   },
                 }}>
@@ -168,10 +168,10 @@ const ContactUs = () => {
                           }}
                         >
                           <Typography sx={{ fontSize: "1rem" }}>
-                            +923000080216
+                          +92 334 3588617
                           </Typography>
                           <Typography sx={{ fontSize: "1rem" }}>
-                            +923000080216
+                          +971 55 533 7567
                           </Typography>
                         </Box>
                       </Box>

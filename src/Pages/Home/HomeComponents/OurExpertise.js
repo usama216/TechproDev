@@ -96,7 +96,7 @@ const OurExpertise = () => {
 
                     }}
                   >
-                    <Box>
+                    <Box height='23rem'>
                       <img
                         src={
                           index === 0

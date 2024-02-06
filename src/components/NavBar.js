@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../Assets/Logo.svg";
 // import "./NavBar.css"; // Import the CSS file
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -66,40 +67,41 @@ const NavBar = () => {
               alignItems: "center",
             }}
           >
-            <a href="/" className="nav-link">
+            <Link to="/" className="nav-link">
               Home
-            </a>
-            <a href="/portfolio" className="nav-link">
+            </Link>
+            <Link to="/portfolio" className="nav-link">
               Portfolio
-            </a>
-            <a href="/services" className="nav-link">
+            </Link>
+            <Link to="/services" className="nav-link">
               Services
-            </a>
-            <a href="/aboutus" className="nav-link">
+            </Link>
+            <Link to="/aboutus" className="nav-link">
               About us
-            </a>
-            <a href="/blog" className="nav-link">
+            </Link>
+            <Link to="/blog" className="nav-link">
               Blog
-            </a>
+            </Link>
             <Box>
               <Button
                 variant="contained"
                 sx={{
                   backgroundColor: "#00a0d5",
-                  borderRadius: "19px",
+                  borderRadius: "25px",
                   color: "white",
                 }}
               >
-                <a
-                  href="/contactus"
+                <Link
+                  to="/contactus"
                   style={{
+                    textTransform:'none',
                     textDecoration: "none",
                     color: "white",
-                    fontSize: "1rem",
+                    fontSize: "1.2rem",
                   }}
                 >
                   Contact us
-                </a>
+                </Link>
               </Button>
             </Box>
           </Box>
