@@ -213,6 +213,7 @@ const OurExpertise = () => {
                   flex: 1,
                   transition: "background-color 0.3s ease-in-out",
                   opacity: activeIndex === index ? 1 : 1,
+                  display:'flex', justifyContent:'center', alignItems:'center'
                 }}
               >
                 <Box sx={{textAlign:'center'}}>

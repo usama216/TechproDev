@@ -2,11 +2,15 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import HeroSectionImage from "../../../Assets/HeroSectionImage.png";
 import { Typewriter } from "react-simple-typewriter";
+import Arrows from "../../../components/Arrows";
 
 
 const HeroSection = () => {
   return (
     <>
+      <Box sx={{paddingBottom:'3rem'}}>
+
+
       <Box
         sx={{
           backgroundImage: `url(${HeroSectionImage})`,
@@ -261,6 +265,11 @@ position:'absolute',
           </Button>
         </Box>
       </Box>
+      <Arrows/>
+
+      </Box>
+
+
     </>
   );
 };

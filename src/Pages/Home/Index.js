@@ -7,6 +7,7 @@ import Portfolio from './HomeComponents/Portfolio'
 import Testimonials from './HomeComponents/Testimonials'
 import ContactUs from './HomeComponents/ContactUs'
 import Footer from '../../components/Footer'
+import Arrows from '../../components/Arrows'
 
 const Index = () => {
   return (
