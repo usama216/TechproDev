@@ -9,7 +9,7 @@ const Portfolio = () => {
     dots: false,
     autoplay: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     arrows:false,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -113,7 +113,7 @@ const Portfolio = () => {
 
 
                 <Box
-                  paddingLeft={"10%"}
+
                   color={"black"}
                   display={"flex"}
                   flexDirection={"column"}
@@ -160,6 +160,21 @@ const Portfolio = () => {
                     TechProDev embarked on a transformative journey to redefine
                     user experiences and streamline workflows.
                   </Typography>
+                  <Box>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        backgroundColor: "#00A0D5",
+                        borderRadius: "25px",
+                        textTransform: "none ",
+                        color: "white",
+                        padding: "0.5rem 1rem",
+
+                      }}
+                    >
+                      View More
+                    </Button>
+                  </Box>
                 </Box>
 
           </Box>

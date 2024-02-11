@@ -245,6 +245,9 @@ position:'absolute',
             sx={{
               color: "white",
               backgroundColor: "#00a0d5",
+              "&:hover": { // Apply styles on hover
+            backgroundColor: "#00a0d5", // Change background color to red on hover
+        },
               cursor: "pointer",
               fontSize: "1rem",
               paddingTop: "0.4rem",

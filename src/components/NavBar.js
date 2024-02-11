@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Box, Button, Drawer, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Logo from "../Assets/Logo.svg";
-// import "./NavBar.css"; // Import the CSS file
 import CloseIcon from "@mui/icons-material/Close";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Logo from "../Assets/Logo.svg";
 
 const NavBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -26,7 +25,7 @@ const NavBar = () => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            gap: "3rem",
+            gap: "1rem",
           }}
         >
           <Box
@@ -63,47 +62,46 @@ const NavBar = () => {
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
-              gap: "3rem",
+              gap: "2rem",
               alignItems: "center",
             }}
           >
-            <Link to="/" className="nav-link">
+            <NavLink to="/" className="nav-link" activeClassName="active">
               Home
-            </Link>
-            <Link to="/portfolio" className="nav-link">
+            </NavLink>
+            <NavLink to="/portfolio" className="nav-link" activeClassName="active">
               Portfolio
-            </Link>
-            <Link to="/services" className="nav-link">
+            </NavLink>
+            <NavLink to="/services" className="nav-link" activeClassName="active">
               Services
-            </Link>
-            <Link to="/aboutus" className="nav-link">
+            </NavLink>
+            <NavLink to="/aboutus" className="nav-link" activeClassName="active">
               About us
-            </Link>
-            <Link to="/blog" className="nav-link">
+            </NavLink>
+            <NavLink to="/blog" className="nav-link" activeClassName="active">
               Blog
-            </Link>
-            <Box>
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "#00a0d5",
-                  borderRadius: "25px",
+            </NavLink>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#00a0d5",
+                borderRadius: "25px",
+                color: "white",
+              }}
+            >
+              <NavLink
+                to="/contactus"
+                style={{
+                  textTransform:'none',
+                  textDecoration: "none",
                   color: "white",
+                  fontSize: "1rem",
                 }}
+                activeClassName="active"
               >
-                <Link
-                  to="/contactus"
-                  style={{
-                    textTransform:'none',
-                    textDecoration: "none",
-                    color: "white",
-                    fontSize: "1.2rem",
-                  }}
-                >
-                  Contact us
-                </Link>
-              </Button>
-            </Box>
+                Contact us
+              </NavLink>
+            </Button>
           </Box>
 
           {/* Mobile Drawer */}
@@ -123,63 +121,59 @@ const NavBar = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                // padding: "2rem",
-
                 gap: "1.5rem",
               }}
             >
-              <a href="/" className="nav-link" onClick={handleDrawerClose}>
+              <NavLink to="/" className="nav-link" onClick={handleDrawerClose}>
                 Home
-              </a>
-              <a
-                href="/portfolio"
+              </NavLink>
+              <NavLink
+                to="/portfolio"
                 className="nav-link"
                 onClick={handleDrawerClose}
               >
                 Portfolio
-              </a>
-              <a
-                href="/services"
+              </NavLink>
+              <NavLink
+                to="/services"
                 className="nav-link"
                 onClick={handleDrawerClose}
               >
                 Services
-              </a>
-              <a
-                href="/aboutus"
+              </NavLink>
+              <NavLink
+                to="/aboutus"
                 className="nav-link"
                 onClick={handleDrawerClose}
               >
                 About us
-              </a>
-              <a href="/blog" className="nav-link" onClick={handleDrawerClose}>
+              </NavLink>
+              <NavLink to="/blog" className="nav-link" onClick={handleDrawerClose}>
                 Blog
-              </a>
-              <Box>
-                <Button
-                  variant="contained"
-                  sx={{
-                    backgroundColor: "#00a0d5",
-                    borderRadius: "19px",
+              </NavLink>
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#00a0d5",
+                  borderRadius: "19px",
+                  color: "white",
+                }}
+              >
+                <NavLink
+                  to="/contactus"
+                  style={{
+                    textDecoration: "none",
                     color: "white",
+                    fontSize: "1rem",
                   }}
+                  onClick={handleDrawerClose}
+                  activeClassName="active"
                 >
-                  <a
-                    href="/contactus"
-                    style={{
-                      textDecoration: "none",
-                      color: "white",
-                      fontSize: "1rem",
-                    }}
-                  >
-                    Contact us
-                  </a>
-                </Button>
-              </Box>
+                  Contact us
+                </NavLink>
+              </Button>
             </Box>
           </Drawer>
-
-          {/* Contact Button */}
         </Box>
       </Box>
     </>
