@@ -143,6 +143,10 @@ const OurExpertise = () => {
                           fontSize: "1.5rem",
                           fontWeight: "bold",
                         },
+                        "@media(max-width:779px) ": {
+              fontWeight:'bold',
+              fontSize:'2rem'
+            },
                       }}
                     >
                       {index === 0
@@ -163,6 +167,9 @@ const OurExpertise = () => {
                           fontSize: "0.8rem",
                           width: "100%",
                         },
+                        "@media(max-width:779px) ": {
+              width:'80%'
+            },
                       }}
                     >
                       Transforming ideas into interactive and user-friendly web

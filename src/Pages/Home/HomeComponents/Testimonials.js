@@ -68,10 +68,13 @@ const testimonialsData = [
 
 const TestimonialCard = ({ id, role, companyName, content, rating }) => (
 
-   <Grid item key={id} xs={12} md={12} lg={3.7} >
+   <Grid item key={id} xs={12} sm={5.5} md={3.7} lg={3.7} >
     <Box sx={{ padding: "2rem", boxShadow: "5px 5px 4px gray", borderRadius: "15px" }}>
       <Box sx={{ display: "flex", alignItems: "center", paddingBottom: "1rem" }}>
-        <Box sx={{ width: "25%", height: "auto", borderRadius: "50%", overflow: "hidden" }}>
+        <Box sx={{ width: "25%", height: "auto", borderRadius: "50%", overflow: "hidden", "@media(min-width:600px) and (max-width:768px)": {
+               width:'100%'
+
+              }, }}>
           <img src={Mypic} alt="My Pic" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </Box>
         <Box sx={{ paddingLeft: "1.5rem" }}>
@@ -79,7 +82,14 @@ const TestimonialCard = ({ id, role, companyName, content, rating }) => (
           <Typography sx={{ color: "#1E4F8E", '@media(max-width:480px)':{fontSize:'0.9rem'} }} >{companyName}</Typography>
         </Box>
       </Box>
-      <Typography sx={{ color: "#0F65A0", textAlign: "center", fontSize:'1rem', lineHeight:'20px' }}>{content}</Typography>
+      <Typography sx={{ color: "#0F65A0", textAlign: "center", fontSize:'1rem', lineHeight:'20px',
+        "@media(min-width:600px) and (max-width:768px)": {
+                fontSize:'0.8rem'
+
+
+              },
+
+       }}>{content}</Typography>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", paddingTop: "1rem" }}>
         <Typography fontWeight={'600'} paddingRight={'0.5rem'}>{rating}</Typography>
         <Stack spacing={1}>
@@ -95,7 +105,10 @@ const Testimonials = () => {
   const isMobile = useMediaQuery("(max-width: 600px)");
 
   return (
-    <Box sx={{ paddingLeft: "8%", paddingRight: "8%", paddingTop: "4rem", paddingBottom: "4rem" }}>
+    <Box sx={{ paddingLeft: "8%", paddingRight: "8%", paddingTop: "4rem", paddingBottom: "4rem",
+
+
+     }}>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", color: "#1E4F8E", textAlign: "center" }}>
         <Typography sx={{ fontSize: "2.5rem", fontWeight: "bold", "@media (max-width: 480px)": { fontSize: "1.5rem" } }}>
           TESTIMONIALS
@@ -105,7 +118,9 @@ const Testimonials = () => {
         </Typography>
       </Box>
 
-      <Grid container gap={"2rem"} marginTop={"3rem"}>
+      <Grid container gap={"2rem"} marginTop={"3rem"} sx={{"@media(max-width:779px) ": {
+              gap:'1rem'
+            },}}>
         {testimonialsData.slice(0, isMobile ? 3 : undefined).map((testimonial, index) => (
           <TestimonialCard key={index} {...testimonial} />
         ))}

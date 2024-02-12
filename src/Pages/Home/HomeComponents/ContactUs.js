@@ -174,7 +174,7 @@ const ContactUs = () => {
                       },
                     }}
                   >
-                    <Grid item lg={6} sm={12}>
+                    <Grid item lg={6} sm={6} md={6} xs={12}>
                       <Box display={"flex"} alignItems={"center"}>
                         <Phone
                           sx={{
@@ -200,7 +200,7 @@ const ContactUs = () => {
                       </Box>
                     </Grid>
 
-                    <Grid item lg={6} sm={12}>
+                    <Grid item lg={6} sm={6} md={6} xs={12}>
                       <Box
                         display={"flex"}
                         alignItems={"center"}
@@ -221,6 +221,7 @@ const ContactUs = () => {
                             "@media(max-width:480px)": {
                               marginTop: "1rem",
                             },
+
                           }}
                         >
                           <Typography sx={{ fontSize: "1rem" }}>

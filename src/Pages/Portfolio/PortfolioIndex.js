@@ -122,6 +122,7 @@ const PortfolioIndex = () => {
               item
               lg={8}
               sm={12}
+
               justifyContent={"center"}
               alignItems={"center"}
               display={"flex"}

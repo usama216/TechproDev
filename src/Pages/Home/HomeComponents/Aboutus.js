@@ -51,6 +51,10 @@ const Aboutus = () => {
                 fontSize: "0.8rem",
                 width: "100%",
               },
+              "@media(max-width:779px) ": {
+              width:'90%',
+              
+            },
             }}
           >
             TechProDev, A one stop shop for all your digital needs.
@@ -98,6 +102,10 @@ const Aboutus = () => {
                 paddingRight: "0%",
                 paddingLeft: "0%",
               },
+              "@media(max-width:779px) ": {
+             paddingLeft:'0%',
+             paddingRight:'0%'
+            },
             }}
           >
             <img
