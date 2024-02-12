@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import './App.css';
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route, useLocation, Link} from 'react-router-dom'
 import Index from './Pages/Home/Index';
 import PortfolioIndex from './Pages/Portfolio/PortfolioIndex';
 import AboutIndex from './Pages/About/AboutIndex';
@@ -22,6 +23,11 @@ const theme = createTheme({
 
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
    <>
@@ -41,5 +47,7 @@ function App() {
    </>
   );
 }
+
+
 
 export default App;

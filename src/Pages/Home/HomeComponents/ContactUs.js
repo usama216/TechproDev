@@ -1,15 +1,38 @@
 import { LocationCity, Phone } from "@mui/icons-material";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, {useState} from "react";
 import Map from "../../../Assets/MAP.JPG";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ContactUs = () => {
   const mapLink = "https://maps.app.goo.gl/P9aHue6YQDzN1zbV7";
 
   const handleClick = () => {
     window.open(mapLink, "_blank");
+  };
+
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name || !email || !message) {
+      toast.error('Please fill all the required fields.');
+    } else {
+      // Here, you can handle the form submission logic
+      // For now, let's just display a success message
+      toast.success('Your message has been sent to the TechProDev Team.');
+      // Reset form fields
+      setName('');
+      setEmail('');
+      setMessage('');
+    }
   };
 
   return (
@@ -216,156 +239,140 @@ const ContactUs = () => {
                   {/* -------------------yeh box end-------- */}
                 </Box>
                 <form
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginTop: "1rem",
-                    "@media(max-width:480px)": { width: "100%" },
-                  }}
-                >
-                  <Box
-                    display={"flex"}
-                    alignItems={"center"}
-                    justifyContent={"space-evenly"}
-                    width={"100%"}
-                    sx={{
-                      "@media(max-width:480px)": {
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "start",
-                      },
-                    }}
-                  >
-                    <Box
-                      display={"flex"}
-                      flexDirection={"column"}
-
-                      width={"90%"}
-                      sx={{
-                        "@media(max-width:480px)": { width: "100%" },
-                      }}
-                    >
-                      <label>Name</label>
-                      <input
-                        type={"text"}
-                        placeholder="Your name"
-                        style={{
-                          marginTop: "1rem",
-                          backgroundColor: "white",
-                          borderRadius: "7px",
-                          outline: "none",
-                          height: "3rem",
-                          width: "95%", // Set the width to 100%
-                          border: "none",
-                          padding: "1rem",
-                          fontSize: "1rem",
-                        }}
-                      />
-                    </Box>
-                    <Box display={"flex"} flexDirection={"column"} width="90%"
-                    sx={{
-                        "@media(max-width:480px)": { width: "100%", marginTop:'1rem' },
-                      }}
-                    >
-                      <label>Email</label>
-                      <input
-                        type={"text"}
-                        placeholder="Your email"
-                        style={{
-                          marginTop: "1rem",
-                          backgroundColor: "white",
-                          borderRadius: "7px",
-
-                          height: "3rem",
-                          width: "95%", // Set the width to 100%
-                          border: "none",
-                          padding: "1rem",
-                          fontSize: "1rem",
-                          outline: "none",
-                        }}
-                      />
-                    </Box>
-                  </Box>
-                  <Box
-                    display={"flex"}
-                    flexDirection={"column"}
-                    width="100%"
-                    marginTop="2rem"
-                  >
-                    <label>Message</label>
-                    <textarea
-                      placeholder="Message"
-                      style={{
-                        marginTop: "1rem",
-                        backgroundColor: "white",
-                        borderRadius: "7px",
-                        height: "15rem",
-
-                        width: "95%", // Set the width to 100%
-                        border: "none",
-                        padding: "1rem",
-                        fontSize: "1rem",
-                        outline: "none",
-                      }}
-                    />
-                    {/* <TextField  multiline rows={9}  sx={{ marginTop:'1rem',
-
-        backgroundColor: 'white',
-        borderRadius: '10px',
-        width: '100%', // Set the width to 100%
-        '& .MuiOutlinedInput-root': {
-          '& fieldset': {
-            border: 'none',
+      onSubmit={handleSubmit}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "1rem",
+        "@media(max-width:480px)": { width: "100%" },
+      }}
+    >
+      <Box
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"space-evenly"}
+        width={"100%"}
+        sx={{
+          "@media(max-width:480px)": {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "start",
           },
-        },
-        '&:hover': {
-          '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-              border: 'none',
+        }}
+      >
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          width={"90%"}
+          sx={{
+            "@media(max-width:480px)": { width: "100%" },
+          }}
+        >
+          <label>Name</label>
+          <input
+            type={"text"}
+            placeholder="Your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+
+            style={{
+              marginTop: "1rem",
+              backgroundColor: "white",
+              borderRadius: "7px",
+              outline: "none",
+              height: "3rem",
+              width: "95%", // Set the width to 100%
+              border: "none",
+              padding: "1rem",
+              fontSize: "1rem",
+            }}
+          />
+        </Box>
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          width="90%"
+          sx={{
+            "@media(max-width:480px)": { width: "100%", marginTop: '1rem' },
+          }}
+        >
+          <label>Email</label>
+          <input
+            type={"text"}
+            placeholder="Your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+
+            style={{
+              marginTop: "1rem",
+              backgroundColor: "white",
+              borderRadius: "7px",
+              height: "3rem",
+              width: "95%", // Set the width to 100%
+              border: "none",
+              padding: "1rem",
+              fontSize: "1rem",
+              outline: "none",
+            }}
+          />
+        </Box>
+      </Box>
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        width="100%"
+        marginTop="2rem"
+      >
+        <label>Message</label>
+        <textarea
+          placeholder="Message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+
+          style={{
+            marginTop: "1rem",
+            backgroundColor: "white",
+            borderRadius: "7px",
+            height: "15rem",
+            width: "95%", // Set the width to 100%
+            border: "none",
+            padding: "1rem",
+            fontSize: "1rem",
+            outline: "none",
+          }}
+        />
+      </Box>
+
+      <Box>
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            marginTop: "3rem",
+            textTransform: "none",
+            fontSize: "1rem",
+            padding: '0.8rem 1.5rem',
+            borderRadius: '6px',
+            backgroundColor: "#51B5DC",
+            "&:hover": {
+              backgroundColor: "#1E4F8E",
             },
-          },
-        },
-        '&.Mui-focused': {
-          '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-              border: 'none',
-            },
-          },
-        },
+          }}
+        >
+          Send Message
+        </Button>
+      </Box>
+    </form>
 
-
-
-     }}/> */}
-                  </Box>
-
-                  <Box>
-                    <Button
-                      variant="contained"
-                      sx={{
-                        marginTop: "3rem",
-                        textTransform: "none",
-                        fontSize: "1rem",
-                        padding:'0.8rem 1.5rem',
-                        borderRadius:'6px',
-
-                        backgroundColor: "#1E4F8E",
-                        "&:hover": {
-                          backgroundColor: "#51B5DC",
-                        },
-                      }}
-                    >
-                      Send Message
-                    </Button>
-                  </Box>
-                </form>
               </Box>
               </Box>
             </Grid>
           </Grid>
         </Box>
       </Box>
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 };

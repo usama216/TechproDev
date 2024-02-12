@@ -114,7 +114,7 @@ const ServicesIndex = () => {
         }}
       >
 
-        <div>
+<div>
           <div>
             {[0, 1, 2, 3].map((index) => (
               <div
@@ -136,7 +136,7 @@ const ServicesIndex = () => {
 
                     }}
                   >
-                    <Box>
+                    <Box height='23rem'>
                       <img
                         src={
                           index === 0
@@ -165,12 +165,12 @@ const ServicesIndex = () => {
                     <Typography
                       variant="h2"
                       fontSize={"3rem"}
-
+                      fontWeight= "600"
 
                       sx={{
                         "@media (max-width: 480px)": {
                           fontSize: "1.5rem",
-                          fontWeight: "bold",
+
                         },
                       }}
                     >
@@ -186,7 +186,7 @@ const ServicesIndex = () => {
                       variant="subtitle"
                       fontSize={"1rem"}
                       width="70%"
-
+                      marginTop={"1.5rem"}
                       sx={{
                         "@media (max-width: 480px)": {
                           fontSize: "0.8rem",
@@ -202,7 +202,7 @@ const ServicesIndex = () => {
                     <Button
                       variant="contained"
                       sx={{
-                        marginTop: "1rem",
+                        marginTop: "3rem",
                         fontSize: "1rem",
                         borderRadius: "15px",
                         backgroundColor: "#1d4ed8",
@@ -253,6 +253,7 @@ const ServicesIndex = () => {
                   flex: 1,
                   transition: "background-color 0.3s ease-in-out",
                   opacity: activeIndex === index ? 1 : 1,
+                  display:'flex', justifyContent:'center', alignItems:'center'
                 }}
               >
                 <Box sx={{textAlign:'center'}}>

@@ -87,32 +87,32 @@ const Footer = () => {
                   </Typography>
 
                   <Box padding="1rem 0rem" color={"#494C49"}>
-                    <Typography sx={{ fontSize: "1.2rem" }}>
+                    <Typography sx={{ fontSize: "1rem" }}>
                       Web Application Development
                     </Typography>
                   </Box>
                   <Box padding="1rem 0rem" color={"#494C49"}>
-                    <Typography sx={{ fontSize: "1.2rem" }}>
+                    <Typography sx={{ fontSize: "1rem" }}>
                       Web Application Design
                     </Typography>
                   </Box>
                   <Box padding="1rem 0rem" color={"#494C49"}>
-                    <Typography sx={{ fontSize: "1.2rem" }}>
+                    <Typography sx={{ fontSize: "1rem" }}>
                       Mobile Application Development
                     </Typography>
                   </Box>
                   <Box padding="1rem 0rem" color={"#494C49"}>
-                    <Typography sx={{ fontSize: "1.2rem" }}>
+                    <Typography sx={{ fontSize: "1rem" }}>
                       Mobile Application Design
                     </Typography>
                   </Box>
                   <Box padding="1rem 0rem" color={"#494C49"}>
-                    <Typography sx={{ fontSize: "1.2rem" }}>
+                    <Typography sx={{ fontSize: "1rem" }}>
                       Search Engine Optimization
                     </Typography>
                   </Box>
                   <Box padding="1rem 0rem" color={"#494C49"}>
-                    <Typography sx={{ fontSize: "1.2rem" }}>
+                    <Typography sx={{ fontSize: "1rem" }}>
                       Social Media Marketing
                     </Typography>
                   </Box>

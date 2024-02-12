@@ -1,8 +1,16 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import Aboutusimage from "../../../Assets/aboutus.png";
-
+import { useNavigate } from "react-router-dom";
 const Aboutus = () => {
+
+
+  const navigate = useNavigate(); // Get the navigate function from React Router
+
+  const handleButtonClick = () => {
+    navigate("/aboutus"); // Navigate to /services page
+  };
+
   return (
     <>
       <Box
@@ -58,6 +66,7 @@ const Aboutus = () => {
           </Typography>
 
           <Button
+          onClick={handleButtonClick}
             variant="contained"
             sx={{
               marginTop: "3rem",

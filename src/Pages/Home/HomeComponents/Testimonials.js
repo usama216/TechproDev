@@ -9,84 +9,86 @@ const testimonialsData = [
     role: "Marketing Manager",
     companyName: "Company 1",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: 5.0,
+    rating: '5.0',
   },
   {
     id: 2,
     role: "Marketing Manager",
-    companyName: "Company 1",
+    companyName: "Company 2",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: 5.0,
+    rating: '5.0',
   },
   {
     id: 3,
     role: "Marketing Manager",
-    companyName: "Company 1",
+    companyName: "Company 3",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: 5.0,
+    rating: '5.0',
   },
   {
     id: 4,
     role: "Marketing Manager",
-    companyName: "Company 1",
+    companyName: "Company 4",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: 5.0,
+    rating: '5.0',
   },
   {
     id: 5,
     role: "Marketing Manager",
-    companyName: "Company 1",
+    companyName: "Company 5",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: 5.0,
+    rating: '5.0',
   },{
     id: 6,
     role: "Marketing Manager",
-    companyName: "Company 1",
+    companyName: "Company 6",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: 5.0,
+    rating: '5.0',
   },{
     id: 7,
     role: "Marketing Manager",
-    companyName: "Company 1",
+    companyName: "Company 7",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: 5.0,
+    rating: '5.0',
   },{
     id: 8,
     role: "Marketing Manager",
-    companyName: "Company 1",
+    companyName: "Company 8",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: 5.0,
+    rating: '5.0',
   },{
     id: 9,
     role: "Marketing Manager",
-    companyName: "Company 1",
+    companyName: "Company 9",
     content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: 5.0,
+    rating: '5.0',
   },
   // Add more testimonial data as needed
 ];
 
 const TestimonialCard = ({ id, role, companyName, content, rating }) => (
-  <Grid item key={id} xs={12} md={12} lg={3.5}>
+
+   <Grid item key={id} xs={12} md={12} lg={3.7} >
     <Box sx={{ padding: "2rem", boxShadow: "5px 5px 4px gray", borderRadius: "15px" }}>
       <Box sx={{ display: "flex", alignItems: "center", paddingBottom: "1rem" }}>
         <Box sx={{ width: "25%", height: "auto", borderRadius: "50%", overflow: "hidden" }}>
           <img src={Mypic} alt="My Pic" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </Box>
         <Box sx={{ paddingLeft: "1.5rem" }}>
-          <Typography>{role}</Typography>
+          <Typography fontWeight={600}>{role}</Typography>
           <Typography sx={{ color: "#1E4F8E" }}>{companyName}</Typography>
         </Box>
       </Box>
-      <Typography sx={{ color: "#0F65A0", textAlign: "center" }}>{content}</Typography>
+      <Typography sx={{ color: "#0F65A0", textAlign: "center", fontSize:'1rem', lineHeight:'20px' }}>{content}</Typography>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", paddingTop: "1rem" }}>
-        <Typography>{rating}</Typography>
+        <Typography fontWeight={'600'} paddingRight={'0.5rem'}>{rating}</Typography>
         <Stack spacing={1}>
-          <Rating name={`size-medium-${id}`} defaultValue={rating} />
+          <Rating  defaultValue={rating} precision={0.5} readOnly/>
         </Stack>
       </Box>
     </Box>
   </Grid>
+
 );
 
 const Testimonials = () => {

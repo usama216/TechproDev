@@ -8,7 +8,7 @@ import SMMIcon from "../../../Assets/Expertise/SMMIcon.svg";
 import SEOIcon from "../../../Assets/Expertise/SEOIcon.svg";
 import WebIcon from "../../../Assets/Expertise/WebIcon.svg";
 import MobIcon from "../../../Assets/Expertise/MobIcon.svg";
-
+import { useNavigate} from "react-router-dom";
 const OurExpertise = () => {
 
 
@@ -25,6 +25,12 @@ const OurExpertise = () => {
   useEffect(() => {
     localStorage.setItem("activeIndex", activeIndex);
   }, [activeIndex]);
+
+  const navigate = useNavigate(); // Get the navigate function from React Router
+
+  const handleButtonClick = () => {
+    navigate("/services"); // Navigate to /services page
+  };
 
   return (
     <>
@@ -160,6 +166,7 @@ const OurExpertise = () => {
                       performance at every stage.
                     </Typography>
                     <Button
+                    onClick={handleButtonClick}
                       variant="contained"
                       sx={{
                         marginTop: "3rem",

@@ -3,9 +3,16 @@ import { Box, Button, Typography } from "@mui/material";
 import HeroSectionImage from "../../../Assets/HeroSectionImage.png";
 import { Typewriter } from "react-simple-typewriter";
 import Arrows from "../../../components/Arrows";
+import { useNavigate } from "react-router-dom";
 
 
 const HeroSection = () => {
+  const navigate = useNavigate(); // Get the navigate function from React Router
+
+  const handleButtonClick = () => {
+    navigate("/services"); // Navigate to /services page
+  };
+
   return (
     <>
       <Box sx={{paddingBottom:'3rem'}}>
@@ -17,6 +24,7 @@ const HeroSection = () => {
           backgroundPosition: "center",
           backgroundSize: "contain",
           backgroundRepeat: "none",
+
           height: "100vh",
           marginTop: "1rem",
           width: "100%",
@@ -239,6 +247,7 @@ position:'absolute',
           }}
         >
           <Button
+          onClick={handleButtonClick}
             data-aos="fade-up"
             data-aos-duration="1500"
             variant="outlined"
