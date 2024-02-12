@@ -15,7 +15,9 @@ const HeroSection = () => {
 
   return (
     <>
-      <Box sx={{paddingBottom:'3rem'}}>
+      <Box sx={{paddingBottom:'3rem','@media(max-width:480px)':{
+        paddingBottom:'1rem'
+      }}}>
 
 
       <Box

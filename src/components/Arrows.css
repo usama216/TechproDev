@@ -17,16 +17,16 @@ width: 60px;
     -webkit-animation: arrow 1.5s infinite; /* Reduced animation time for responsiveness */
   }
 
-  
+
   /* Media query for smaller screens */
   @media screen and (max-width: 768px) {
         .arrows-container {
-
-        top: 60%; /* Adjusted top percentage for smaller screens */
+         display: none;
         }
 
     .arrows path {
-      stroke-width: 1.5vw; /* Adjusted stroke width for smaller screens */
+      stroke-width: 1.5vw;
+
     }
   }
 

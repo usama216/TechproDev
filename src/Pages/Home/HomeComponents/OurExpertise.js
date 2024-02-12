@@ -102,7 +102,12 @@ const OurExpertise = () => {
 
                     }}
                   >
-                    <Box height='23rem'>
+                    <Box height='23rem'
+                    sx={{'@media(max-width:480px)':{
+                      height:'20rem'
+                    }}}
+
+                    >
                       <img
                         src={
                           index === 0

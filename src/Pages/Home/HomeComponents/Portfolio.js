@@ -73,6 +73,10 @@ const Portfolio = () => {
 
         paddingTop: "4rem",
         paddingBottom: "4rem",
+'@media(max-width:480px)':{
+  paddingRight:'8%'
+}
+
       }}
     >
       <Box

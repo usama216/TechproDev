@@ -40,6 +40,8 @@ const PortfolioIndex = () => {
             color: "white",
             textAlign: "center",
             height: "30vh",
+            paddingLeft:'8%',
+            paddingRight:'8%',
             "@media(max-width:480px)": {
               height: "20vh",
             },
@@ -94,6 +96,7 @@ const PortfolioIndex = () => {
           justifyContent={"center"}
           alignItems={"center"}
           paddingTop={"4rem"}
+
         >
           <Grid container>
             <Grid item lg={4} sm={12}>

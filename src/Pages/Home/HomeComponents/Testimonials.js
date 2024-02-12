@@ -75,8 +75,8 @@ const TestimonialCard = ({ id, role, companyName, content, rating }) => (
           <img src={Mypic} alt="My Pic" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </Box>
         <Box sx={{ paddingLeft: "1.5rem" }}>
-          <Typography fontWeight={600}>{role}</Typography>
-          <Typography sx={{ color: "#1E4F8E" }}>{companyName}</Typography>
+          <Typography fontWeight={600} fontSize={'1rem'} sx={{'@media(max-width:480px)':{fontSize:'0.9rem'}}}>{role}</Typography>
+          <Typography sx={{ color: "#1E4F8E", '@media(max-width:480px)':{fontSize:'0.9rem'} }} >{companyName}</Typography>
         </Box>
       </Box>
       <Typography sx={{ color: "#0F65A0", textAlign: "center", fontSize:'1rem', lineHeight:'20px' }}>{content}</Typography>
