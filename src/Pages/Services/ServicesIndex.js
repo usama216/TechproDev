@@ -43,13 +43,14 @@ const ServicesIndex = () => {
           backgroundPosition: "center",
           backgroundSize: "contain",
           backgroundRepeat: "none",
-          height: "30vh",
+          height: "40vh",
           marginTop: "1rem",
           width: "100%",
           "@media(max-width:480px)": {
             height: "20vh",
             backgroundSize: "cover",
             marginTop: "0rem",
+            backgroundRepeat:'no-repeat'
           },
           "@media(min-width:481px) ": {
             backgroundSize: "cover",
@@ -64,7 +65,7 @@ const ServicesIndex = () => {
             flexDirection: "column",
             color: "white",
             textAlign: "center",
-            height: "30vh",
+            height: "40vh",
             "@media(max-width:480px)": {
               height: "20vh",
             },
@@ -98,7 +99,7 @@ const ServicesIndex = () => {
           backgroundImage: `url(${LowerBanner})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
-          backgroundRepeat: "none",
+          backgroundRepeat: "repeat",
           paddingLeft: "8%",
           paddingRight: "8%",
           paddingBottom: "4rem",

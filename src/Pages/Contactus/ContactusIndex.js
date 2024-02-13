@@ -7,7 +7,7 @@ const ContactusIndex = () => {
   return (
     <>
         <NavBar/>
-
+<br/>
 <ContactUs/>
 
         <Footer/>

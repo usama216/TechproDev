@@ -17,7 +17,7 @@ const AboutComponent = () => {
           backgroundPosition: "center",
           backgroundSize: "contain",
           backgroundRepeat: "none",
-          height: "30vh",
+          height: "40vh",
           marginTop: "1rem",
           width: "100%",
           "@media(max-width:480px)": {
@@ -38,7 +38,7 @@ const AboutComponent = () => {
             flexDirection: "column",
             color: "white",
             textAlign: "center",
-            height: "30vh",
+            height: "40vh",
             "@media(max-width:480px)": {
               height: "20vh",
             },

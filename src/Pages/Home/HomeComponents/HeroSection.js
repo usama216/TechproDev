@@ -21,8 +21,8 @@ const HeroSection = () => {
             paddingBottom: "1rem",
           },
           "@media(max-width:779px) ": {
-              paddingBottom:'0rem'
-            },
+            paddingBottom: "0rem",
+          },
         }}
       >
         <Box
@@ -46,7 +46,6 @@ const HeroSection = () => {
             },
             "@media(min-width:780px) ": {
               backgroundSize: "cover",
-
             },
           }}
         >
@@ -71,8 +70,6 @@ const HeroSection = () => {
                 paddingLeft: "10%",
                 paddingRight: "10%",
                 minHeight: "35vh",
-
-
               },
 
               "@media(min-width:769px) and (max-width:1024px)": {
@@ -101,12 +98,12 @@ const HeroSection = () => {
 
                   paddingLeft: "6%",
                   paddingRight: "6%",
-                  },
-                  "@media(min-width:901px) and (max-width:1024px)": {
-                    minHeight: "4rem",
+                },
+                "@media(min-width:901px) and (max-width:1024px)": {
+                  minHeight: "4rem",
                   paddingLeft: "6%",
                   paddingRight: "6%",
-                  },
+                },
               }}
             >
               <Typography
@@ -208,17 +205,17 @@ const HeroSection = () => {
                       left: 0,
                     },
                     "@media(min-width:480px) and (max-width:900px)": {
-                    fontSize: "2rem",
-                    width: "100%",
-                    paddingLeft: "7%",
-                    paddingRight: "0%",
-                  },
-                  "@media(min-width:901px) and (max-width:1024px)": {
-                    fontSize: "2rem",
-                    width: "100%",
-                    paddingLeft: "0%",
-                    paddingRight: "0%",
-                  },
+                      fontSize: "2rem",
+                      width: "100%",
+                      paddingLeft: "7%",
+                      paddingRight: "0%",
+                    },
+                    "@media(min-width:901px) and (max-width:1024px)": {
+                      fontSize: "2rem",
+                      width: "100%",
+                      paddingLeft: "0%",
+                      paddingRight: "0%",
+                    },
                   }}
                 >
                   SERVICES
@@ -242,7 +239,7 @@ const HeroSection = () => {
                   width: "100%",
                   paddingLeft: "15%",
                   paddingRight: "0%",
-                  marginTop:'1rem'
+                  marginTop: "1rem",
                 },
                 "@media(min-width:901px) and (max-width:1024px)": {
                   fontSize: "1.3rem",
@@ -263,7 +260,6 @@ const HeroSection = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-
             }}
           >
             <Button
@@ -293,8 +289,7 @@ const HeroSection = () => {
                   fontSize: "0.8rem",
                 },
                 "@media(min-width:480px) and (max-width:780px)": {
-
-                  marginTop:'1rem'
+                  marginTop: "1rem",
                 },
               }}
             >

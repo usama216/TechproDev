@@ -246,60 +246,63 @@ const OurExpertise = () => {
           </Box>
 
           {/* Your existing section menu for smaller screens */}
-          <Box
-            sx={{
-              display: "flex",
-              gap: "5px",
-              paddingTop: "2rem",
-              flexWrap: "wrap",
-              "@media (min-width: 780px)": {
-                display: "none",
-              },
-            }}
-          >
-            {[0, 1, 2, 3].map((index) => (
-              <div
-                key={index}
-                onClick={() => handleSectionClick(index)}
-                style={{
-                  borderRadius:
-                    index === 0
-                      ? "15px 0px 0px 15px"
-                      : index === 3
-                      ? "0px 15px 15px 0px"
-                      : "0px",
-                      background: activeIndex === index ? "linear-gradient(180deg, #1E4F8E, #4fb0d8)" : "linear-gradient(90deg, white, white)",
-                  color: activeIndex === index ? "#ffffff" : "black",
-                  padding: "1rem",
-                  cursor: "pointer",
-                  flex: 1,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  transition: "background-color 0.3s ease-in-out",
-                  opacity: activeIndex === index ? 1 : 1,
-                }}
-              >
-                <Box>
-                  <img
-                    src={
-                      index === 0
-                        ? WebIcon
-                        : index === 1
-                        ? MobIcon
-                        : index === 2
-                        ? SEOIcon
-                        : SMMIcon
-                    }
-                    alt="Web Application Development"
-                    width={"100%"}
-                    height={"auto"}
+        <Box
+  sx={{
+    display: "flex",
+    gap: "5px",
+    paddingTop: "2rem",
+    flexWrap: "wrap",
+    "@media (min-width: 780px)": {
+      display: "none",
+    },
+  }}
+>
+  {[0, 1, 2, 3].map((index) => (
+    <div
+      key={index}
+      onClick={() => handleSectionClick(index)}
+      style={{
+        borderRadius:
+          index === 0
+            ? "15px 0px 0px 15px"
+            : index === 3
+            ? "0px 15px 15px 0px"
+            : "0px",
+        background:
+          activeIndex === index
+            ? "linear-gradient(180deg, #1E4F8E, #4fb0d8)"
+            : "linear-gradient(90deg, white, white)",
+        color: activeIndex === index ? "#ffffff" : "black",
+        padding: "1rem",
+        cursor: "pointer",
+        flex: 1,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        transition: "background-color 0.3s ease-in-out",
+        opacity: activeIndex === index ? 1 : 1,
+      }}
+    >
+      <Box>
+        <img
+          src={
+            index === 0
+              ? WebIcon
+              : index === 1
+              ? MobIcon
+              : index === 2
+              ? SEOIcon
+              : SMMIcon
+          }
+          alt="Web Application Development"
+          width={"100%"}
+          height={"auto"}
+        />
+      </Box>
+    </div>
+  ))}
+</Box>
 
-                  />
-                </Box>
-              </div>
-            ))}
-          </Box>
         </div>
       </Box>
     </>

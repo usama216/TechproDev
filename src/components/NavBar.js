@@ -90,6 +90,7 @@ const NavBar = () => {
               }}
             >
               <NavLink
+               className="custom-navlink"
                 to="/contactus"
                 style={{
                   textTransform:'none',
@@ -97,7 +98,7 @@ const NavBar = () => {
                   color: "white",
                   fontSize: "1rem",
                 }}
-                activeClassName="active"
+
               >
                 Contact us
               </NavLink>
@@ -120,14 +121,37 @@ const NavBar = () => {
                 width: 250,
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
-                gap: "1.5rem",
+                alignItems: "start",
+                paddingLeft:'10%',
+                gap: "1.2rem",
               }}
             >
-              <NavLink to="/" className="nav-link" onClick={handleDrawerClose}>
+              <NavLink
+ style={{
+                    textDecoration: "none",
+                    color: "#00A0D5",
+                    fontSize: "1rem",
+
+borderRadius:'3px',
+                    boxShadow:'1px 2px 2px grey',
+                    width:'90%',
+                  padding:'1rem 0rem 1rem 1rem'
+
+                  }}
+               to="/" className="nav-link" onClick={handleDrawerClose}>
                 Home
               </NavLink>
               <NavLink
+               style={{
+                    textDecoration: "none",
+                    color: "#00A0D5",
+                    fontSize: "1rem",
+                    borderRadius:'3px',
+                    boxShadow:'1px 2px 2px grey',
+                    width:'90%',
+                  padding:'1rem 0rem 1rem 1rem'
+
+                  }}
                 to="/portfolio"
                 className="nav-link"
                 onClick={handleDrawerClose}
@@ -135,6 +159,16 @@ const NavBar = () => {
                 Portfolio
               </NavLink>
               <NavLink
+               style={{
+                    textDecoration: "none",
+                    color: "#00A0D5",
+                    fontSize: "1rem",
+                    borderRadius:'3px',
+                    boxShadow:'1px 2px 2px grey',
+                    width:'90%',
+                  padding:'1rem 0rem 1rem 1rem'
+
+                  }}
                 to="/services"
                 className="nav-link"
                 onClick={handleDrawerClose}
@@ -144,34 +178,53 @@ const NavBar = () => {
               <NavLink
                 to="/aboutus"
                 className="nav-link"
+                style={{
+                    textDecoration: "none",
+                    color: "#00A0D5",
+                    fontSize: "1rem",
+                    borderRadius:'3px',
+                    boxShadow:'1px 2px 2px grey',
+                    width:'90%',
+                  padding:'1rem 0rem 1rem 1rem'
+
+                  }}
                 onClick={handleDrawerClose}
               >
                 About us
               </NavLink>
-              <NavLink to="/blog" className="nav-link" onClick={handleDrawerClose}>
+              <NavLink to="/blog"
+                 style={{
+                    textDecoration: "none",
+                    color: "#00A0D5",
+                    fontSize: "1rem",
+                    borderRadius:'3px',
+                    boxShadow:'1px 2px 2px grey',
+                    width:'90%',
+                  padding:'1rem 0rem 1rem 1rem'
+
+                  }}
+               className="nav-link" onClick={handleDrawerClose}>
                 Blog
               </NavLink>
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "#00a0d5",
-                  borderRadius: "19px",
-                  color: "white",
-                }}
-              >
+
                 <NavLink
                   to="/contactus"
                   style={{
                     textDecoration: "none",
-                    color: "white",
+                    color: "#00A0D5",
                     fontSize: "1rem",
+                    borderRadius:'3px',
+                    boxShadow:'1px 2px 2px grey',
+                    width:'90%',
+                  padding:'1rem 0rem 1rem 1rem'
+
                   }}
                   onClick={handleDrawerClose}
-                  activeClassName="active"
+
                 >
                   Contact us
                 </NavLink>
-              </Button>
+
             </Box>
           </Drawer>
         </Box>

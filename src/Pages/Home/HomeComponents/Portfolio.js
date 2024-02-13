@@ -126,10 +126,17 @@ const Portfolio = () => {
                 {item.title}
               </Typography>
               <Box display="flex" gap={2}>
-                <Button variant="contained" sx={{ backgroundColor: "#ffc75d", borderRadius: "25px", textTransform: "none ", color: "black", padding: "0.5rem 2rem" }}>
+                <Button variant="contained" sx={{ backgroundColor: "#ffc75d",
+"&:hover": {
+   backgroundColor:'#ffc75d' // Set the text color to black on hover as well
+    },
+
+                 borderRadius: "25px", textTransform: "none ", color: "black", padding: "0.5rem 2rem" }}>
                   Mobile
                 </Button>
-                <Button variant="contained" sx={{ backgroundColor: "#ffc75d", borderRadius: "25px", textTransform: "none ", color: "black", padding: "0.5rem 2rem" }}>
+                <Button variant="contained" sx={{ "&:hover": {
+   backgroundColor:'#ffc75d' // Set the text color to black on hover as well
+    }, backgroundColor: "#ffc75d", borderRadius: "25px", textTransform: "none ", color: "black", padding: "0.5rem 2rem" }}>
                   Design
                 </Button>
               </Box>

@@ -18,7 +18,7 @@ const PortfolioIndex = () => {
           backgroundPosition: "center",
           backgroundSize: "contain",
           backgroundRepeat: "none",
-          height: "30vh",
+          height: "40vh",
           marginTop: "1rem",
           width: "100%",
           "@media(max-width:480px)": {
@@ -39,7 +39,7 @@ const PortfolioIndex = () => {
             flexDirection: "column",
             color: "white",
             textAlign: "center",
-            height: "30vh",
+            height: "40vh",
             paddingLeft:'8%',
             paddingRight:'8%',
             "@media(max-width:480px)": {
@@ -76,7 +76,8 @@ const PortfolioIndex = () => {
           backgroundImage: `url(${LowerBanner})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
-          backgroundRepeat: "none",
+
+          backgroundRepeat: "repeat",
           paddingLeft: "8%",
           paddingRight: "8%",
           paddingBottom: "4rem",
@@ -91,6 +92,7 @@ const PortfolioIndex = () => {
           },
         }}
       >
+
         <Box
           display={"flex"}
           justifyContent={"center"}
@@ -197,30 +199,11 @@ const PortfolioIndex = () => {
             </Grid>
           </Grid>
         </Box>
-      </Box>
+
 
       {/* -----------------------------------card 2------------------ */}
 
-      <Box
-        sx={{
-          backgroundImage: `url(${LowerBanner})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "none",
-          paddingLeft: "8%",
-          paddingRight: "8%",
-          paddingBottom: "4rem",
 
-          width: "100%",
-          "@media(max-width:480px)": {
-            backgroundSize: "contain",
-            marginTop: "0rem",
-          },
-          "@media(min-width:481px) ": {
-            backgroundSize: "cover",
-          },
-        }}
-      >
         <Box
           display={"flex"}
           justifyContent={"center"}
@@ -322,32 +305,13 @@ const PortfolioIndex = () => {
             </Grid>
           </Grid>
         </Box>
-      </Box>
+
 
 
 
       {/* ------------------------------Card 3----------------------- */}
 
-      <Box
-        sx={{
-          backgroundImage: `url(${LowerBanner})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "none",
-          paddingLeft: "8%",
-          paddingRight: "8%",
-          paddingBottom: "4rem",
 
-          width: "100%",
-          "@media(max-width:480px)": {
-            backgroundSize: "contain",
-            marginTop: "0rem",
-          },
-          "@media(min-width:481px) ": {
-            backgroundSize: "cover",
-          },
-        }}
-      >
         <Box
           display={"flex"}
           justifyContent={"center"}
@@ -448,29 +412,10 @@ const PortfolioIndex = () => {
             </Grid>
           </Grid>
         </Box>
-      </Box>
 
 
-      <Box
-        sx={{
-          backgroundImage: `url(${LowerBanner})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "none",
-          paddingLeft: "8%",
-          paddingRight: "8%",
-          paddingBottom: "4rem",
 
-          width: "100%",
-          "@media(max-width:480px)": {
-            backgroundSize: "contain",
-            marginTop: "0rem",
-          },
-          "@media(min-width:481px) ": {
-            backgroundSize: "cover",
-          },
-        }}
-      >
+
         <Box
           display={"flex"}
           justifyContent={"center"}
@@ -572,32 +517,13 @@ const PortfolioIndex = () => {
             </Grid>
           </Grid>
         </Box>
-      </Box>
+
 
 
 
       {/* ------------------------------Card 3----------------------- */}
 
-      <Box
-        sx={{
-          backgroundImage: `url(${LowerBanner})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "none",
-          paddingLeft: "8%",
-          paddingRight: "8%",
-          paddingBottom: "4rem",
 
-          width: "100%",
-          "@media(max-width:480px)": {
-            backgroundSize: "contain",
-            marginTop: "0rem",
-          },
-          "@media(min-width:481px) ": {
-            backgroundSize: "cover",
-          },
-        }}
-      >
         <Box
           display={"flex"}
           justifyContent={"center"}

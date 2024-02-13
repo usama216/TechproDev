@@ -63,5 +63,8 @@
   .active {
     color: #00a0d5 !important; /* Overrides default active link color */
   }
+  .custom-navlink.active {
+    color: white !important; /* Ensure the color is always white for the custom NavLink */
+  }
 
 
