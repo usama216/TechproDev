@@ -47,6 +47,10 @@ const ContactUs = () => {
         }}
       >
         <Box
+         data-aos="fade-up"
+        //  data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000"
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -81,7 +85,12 @@ const ContactUs = () => {
             fruition.
           </Typography>
         </Box>
-        <Box>
+        <Box  // data-aos="fade-up"
+        data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="1000"
+
+     data-aos-duration="2000">
           <Grid container color={"white"} marginTop={"3rem"}>
             <Grid item lg={"6"} sx={{order:{xs:2, md:1}, '@media(max-width:480px)':{marginTop:'3rem'}}}>
               <Typography  sx={{
@@ -224,9 +233,7 @@ const ContactUs = () => {
 
                           }}
                         >
-                          <Typography sx={{ fontSize: "1rem" }}>
-                            www.techprodev.com/
-                          </Typography>
+
                           <Typography sx={{ fontSize: "1rem" }}>
                             info@techprodev.com
                           </Typography>

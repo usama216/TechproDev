@@ -35,6 +35,7 @@ const OurExpertise = () => {
   return (
     <>
       <Box
+
         sx={{
           background: "linear-gradient(180deg, #1E4F8E, #4fb0d8)",
           paddingLeft: "8%",
@@ -48,6 +49,8 @@ const OurExpertise = () => {
         }}
       >
         <Box
+        data-aos="fade-up"
+              data-aos-duration="1500"
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -80,8 +83,11 @@ const OurExpertise = () => {
           </Typography>
         </Box>
 
-        <div>
-          <div>
+        <div >
+          <div data-aos="fade-up"
+              data-aos-duration="1500"
+data-aos-delay="500"
+              >
             {[0, 1, 2, 3].map((index) => (
               <div
                 key={index}
@@ -203,6 +209,10 @@ const OurExpertise = () => {
 
           {/* Your existing section menu for larger screens */}
           <Box
+          data-aos="fade-up"
+data-aos-delay="500"
+
+              data-aos-duration="1500"
             sx={{
               display: "flex",
               gap: "5px",
@@ -247,6 +257,10 @@ const OurExpertise = () => {
 
           {/* Your existing section menu for smaller screens */}
         <Box
+        data-aos="fade-up"
+              data-aos-duration="1500"
+data-aos-delay="500"
+
   sx={{
     display: "flex",
     gap: "5px",

@@ -193,12 +193,7 @@ const Footer = () => {
                   flexDirection={"column"}
                   paddingLeft="1rem"
                 >
-                  <Typography
-                    sx={{ fontSize: "1rem", color: "black", cursor: "pointer" }}
-                    onClick={() => window.open(websiteURL, "_blank")}
-                  >
-                    {websiteURL}
-                  </Typography>
+                
                   <Typography
                     sx={{ fontSize: "1rem", color: "black", cursor: "pointer" }}
                     onClick={handleEmailClick}

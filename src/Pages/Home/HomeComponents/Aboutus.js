@@ -1,9 +1,15 @@
 import { Box, Button, Typography } from "@mui/material";
-import React from "react";
+import React,{useEffect} from "react";
 import Aboutusimage from "../../../Assets/aboutus.png";
 import { useNavigate } from "react-router-dom";
-const Aboutus = () => {
+import AOS from "aos";
 
+const Aboutus = () => {
+  useEffect(() => {
+    AOS.init({
+      once: true, // Animation occurs only once
+    });
+  }, []);
 
   const navigate = useNavigate(); // Get the navigate function from React Router
 
@@ -14,6 +20,7 @@ const Aboutus = () => {
   return (
     <>
       <Box
+
         sx={{
           background: "linear-gradient(180deg, #1E4F8E, #4fb0d8)",
           paddingLeft: "8%",
@@ -23,6 +30,9 @@ const Aboutus = () => {
         }}
       >
         <Box
+        // data-aos="fade-up"
+
+
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -33,6 +43,10 @@ const Aboutus = () => {
           }}
         >
           <Typography
+           data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000"
+data-aos-delay="500"
             sx={{
               fontSize: "2.5rem",
               fontWeight: "bold",
@@ -44,6 +58,10 @@ const Aboutus = () => {
             ABOUT US{" "}
           </Typography>
           <Typography
+           data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000"
+data-aos-delay="500"
             sx={{
               fontSize: "1rem",
               width: "80%",
@@ -53,7 +71,7 @@ const Aboutus = () => {
               },
               "@media(max-width:779px) ": {
               width:'90%',
-              
+
             },
             }}
           >
@@ -70,6 +88,10 @@ const Aboutus = () => {
           </Typography>
 
           <Button
+           data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000"
+data-aos-delay="500"
           onClick={handleButtonClick}
             variant="contained"
             sx={{
@@ -94,6 +116,10 @@ const Aboutus = () => {
           </Button>
 
           <Box
+           data-aos="fade-up"
+
+     data-aos-duration="2000"
+data-aos-delay="500"
             sx={{
               paddingLeft: "10%",
               paddingRight: "10%",

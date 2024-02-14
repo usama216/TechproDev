@@ -1,4 +1,3 @@
-
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
 import { Box, Button, Typography } from "@mui/material";
@@ -13,6 +12,11 @@ import WebIcon from "../../Assets/Expertise/WebIcon.svg";
 import MobIcon from "../../Assets/Expertise/MobIcon.svg";
 import UpparBanner from '../../Assets/AboutUs/UpparBanner.svg'
 import LowerBanner from '../../Assets/AboutUs/BannerDown.svg'
+import WebIconWhite from '../../Assets/Expertise/WebIconWhite.svg'
+import MobIconWhite from '../../Assets/Expertise/MobIconWhite.svg'
+import SEOIconWhite from '../../Assets/Expertise/SEOIconWhite.svg'
+import SMMIconWhite from '../../Assets/Expertise/SMMIconWhite.svg'
+
 
 
 const ServicesIndex = () => {
@@ -31,6 +35,9 @@ const ServicesIndex = () => {
   useEffect(() => {
     localStorage.setItem("activeIndex", activeIndex);
   }, [activeIndex]);
+
+
+
 
   return (
     <>
@@ -58,6 +65,12 @@ const ServicesIndex = () => {
         }}
       >
         <Box
+        data-aos="fade-up"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -95,6 +108,7 @@ const ServicesIndex = () => {
         </Box>
       </Box>
       <Box
+
         sx={{
           backgroundImage: `url(${LowerBanner})`,
           backgroundPosition: "center",
@@ -116,7 +130,13 @@ const ServicesIndex = () => {
       >
 
 <div>
-          <div>
+          <div
+          data-aos="fade-up"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000">
             {[0, 1, 2, 3].map((index) => (
               <div
                 key={index}
@@ -225,6 +245,12 @@ const ServicesIndex = () => {
 
           {/* Your existing section menu for larger screens */}
           <Box
+          data-aos="fade-up"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
             sx={{
               display: "flex",
               gap: "5px",
@@ -304,15 +330,11 @@ const ServicesIndex = () => {
               >
                 <Box>
                   <img
-                    src={
-                      index === 0
-                        ? WebIcon
-                        : index === 1
-                        ? MobIcon
-                        : index === 2
-                        ? SEOIcon
-                        : SMMIcon
-                    }
+                   src={
+            activeIndex === index
+              ? (index === 0 ? WebIconWhite : index === 1 ? MobIconWhite : index === 2 ? SEOIconWhite : SMMIconWhite)
+              : (index === 0 ? WebIcon : index === 1 ? MobIcon : index === 2 ? SEOIcon : SMMIcon)
+          }
                     alt="Web Application Development"
                     width={"100%"}
                     height={"auto"}

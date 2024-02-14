@@ -1,5 +1,5 @@
 import { Grid, Box, Button, Typography, Avatar } from "@mui/material";
-import Blog1 from '../../../Assets/Blogs/Blog1.svg'
+import Blog1 from '../../../Assets/Blogs/Blog1.png'
 import UpparBanner from '../../../Assets/AboutUs/UpparBanner.svg'
 
 
@@ -131,6 +131,12 @@ const BlogComponent = () => {
         }}
       >
         <Box
+        data-aos="fade-up"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -168,9 +174,18 @@ const BlogComponent = () => {
         </Box>
       </Box>
 
-        <Grid container spacing={4} paddingLeft={'10%'} paddingRight={'10%'} marginTop={'4rem'}>
+        <Grid container spacing={4} paddingLeft={'10%'} paddingRight={'10%'} marginTop={'4rem'}
+
+        >
       {blogs.map((blog, index) => (
-        <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={index}>
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={index}
+        data-aos="fade-up"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
+        >
           <Box>
             <BlogItem {...blog} />
           </Box>

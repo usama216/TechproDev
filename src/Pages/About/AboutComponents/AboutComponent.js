@@ -31,6 +31,12 @@ const AboutComponent = () => {
         }}
       >
         <Box
+        // data-aos="fade-right"
+        data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -95,7 +101,14 @@ const AboutComponent = () => {
           paddingTop={"4rem"}
         >
           <Grid container>
-            <Grid item lg={5} sm={12}>
+            <Grid item lg={5} sm={12}
+            data-aos="fade-right"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
+            >
               <Box
                 display={"flex"}
                 justifyContent={"center"}
@@ -130,6 +143,12 @@ const AboutComponent = () => {
               justifyContent={"center"}
               alignItems={"center"}
               display={"flex"}
+              data-aos="fade-left"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
             >
               <Box
                 paddingLeft={"10%"}

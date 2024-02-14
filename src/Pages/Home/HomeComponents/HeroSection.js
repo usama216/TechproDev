@@ -79,8 +79,7 @@ const HeroSection = () => {
             }}
           >
             <Box
-              data-aos="fade-up"
-              data-aos-duration="1500"
+
               minHeight={"9rem"}
               position={"relative"}
               sx={{
@@ -107,6 +106,8 @@ const HeroSection = () => {
               }}
             >
               <Typography
+              data-aos="fade-up"
+              data-aos-duration="1500"
                 variant="h3"
                 fontSize={"2.5rem"}
                 fontWeight={"800"}
@@ -139,6 +140,8 @@ const HeroSection = () => {
               </Typography>
 
               <Typography
+              data-aos="fade-up"
+              data-aos-duration="1500"
                 variant="h3"
                 fontSize={"2.5rem"}
                 fontWeight={"800"}
@@ -185,6 +188,8 @@ const HeroSection = () => {
 
               <Box>
                 <Typography
+                data-aos="fade-up"
+              data-aos-duration="1500"
                   variant="h3"
                   fontSize={"2.5rem"}
                   fontWeight={"800"}
@@ -224,6 +229,8 @@ const HeroSection = () => {
             </Box>
 
             <Typography
+            data-aos="fade-up"
+              data-aos-duration="1500"
               variant="h3"
               fontSize={"1.3rem"}
               fontWeight={"600"}
@@ -260,6 +267,7 @@ const HeroSection = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              flexDirection:'column'
             }}
           >
             <Button
@@ -295,9 +303,12 @@ const HeroSection = () => {
             >
               Explore Our Services
             </Button>
+            <Arrows />
+
           </Box>
+
         </Box>
-        <Arrows />
+
       </Box>
     </>
   );

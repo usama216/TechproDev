@@ -94,6 +94,12 @@ const PortfolioIndex = () => {
       >
 
         <Box
+        data-aos="fade-right"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -199,16 +205,43 @@ const PortfolioIndex = () => {
             </Grid>
           </Grid>
         </Box>
+        </Box>
 
 
       {/* -----------------------------------card 2------------------ */}
+      <Box
+        sx={{
+          backgroundImage: `url(${LowerBanner})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
 
+          backgroundRepeat: "repeat",
+          paddingLeft: "8%",
+          paddingRight: "8%",
+          paddingBottom: "4rem",
+
+          width: "100%",
+          "@media(max-width:480px)": {
+            backgroundSize: "contain",
+            marginTop: "0rem",
+          },
+          "@media(min-width:481px) ": {
+            backgroundSize: "cover",
+          },
+        }}
+      >
 
         <Box
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
           paddingTop={"4rem"}
+          data-aos="fade-left"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
         >
           <Grid container>
             <Grid item lg={4} sm={12} sx={{order: {lg: 2, sm: 1}}}>
@@ -305,14 +338,41 @@ const PortfolioIndex = () => {
             </Grid>
           </Grid>
         </Box>
+        </Box>
 
 
 
 
       {/* ------------------------------Card 3----------------------- */}
+      <Box
+        sx={{
+          backgroundImage: `url(${LowerBanner})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
 
+          backgroundRepeat: "repeat",
+          paddingLeft: "8%",
+          paddingRight: "8%",
+          paddingBottom: "4rem",
+
+          width: "100%",
+          "@media(max-width:480px)": {
+            backgroundSize: "contain",
+            marginTop: "0rem",
+          },
+          "@media(min-width:481px) ": {
+            backgroundSize: "cover",
+          },
+        }}
+      >
 
         <Box
+        data-aos="fade-right"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -412,11 +472,38 @@ const PortfolioIndex = () => {
             </Grid>
           </Grid>
         </Box>
+        </Box>
 
+        <Box
+        sx={{
+          backgroundImage: `url(${LowerBanner})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
 
+          backgroundRepeat: "repeat",
+          paddingLeft: "8%",
+          paddingRight: "8%",
+          paddingBottom: "4rem",
+
+          width: "100%",
+          "@media(max-width:480px)": {
+            backgroundSize: "contain",
+            marginTop: "0rem",
+          },
+          "@media(min-width:481px) ": {
+            backgroundSize: "cover",
+          },
+        }}
+      >
 
 
         <Box
+        data-aos="fade-left"
+        // data-aos="flip-down"
+     data-aos-easing="ease-out-cubic"
+data-aos-delay="500"
+
+     data-aos-duration="2000"
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -517,18 +604,47 @@ const PortfolioIndex = () => {
             </Grid>
           </Grid>
         </Box>
+        </Box>
 
 
 
 
       {/* ------------------------------Card 3----------------------- */}
 
+      <Box
+        sx={{
+          backgroundImage: `url(${LowerBanner})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+
+          backgroundRepeat: "repeat",
+          paddingLeft: "8%",
+          paddingRight: "8%",
+          paddingBottom: "4rem",
+
+          width: "100%",
+          "@media(max-width:480px)": {
+            backgroundSize: "contain",
+            marginTop: "0rem",
+          },
+          "@media(min-width:481px) ": {
+            backgroundSize: "cover",
+          },
+        }}
+      >
 
         <Box
+         data-aos="fade-right"
+        // data-aos="flip-down"
+    //  data-aos-easing="ease-out-cubic"
+// data-aos-delay="500"
+
+     data-aos-duration="2000"
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
           paddingTop={"4rem"}
+
         >
           <Grid container>
             <Grid item lg={4} sm={12}>

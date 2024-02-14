@@ -105,7 +105,14 @@ const Testimonials = () => {
   const isMobile = useMediaQuery("(max-width: 600px)");
 
   return (
-    <Box sx={{ paddingLeft: "8%", paddingRight: "8%", paddingTop: "4rem", paddingBottom: "4rem",
+    <Box
+data-aos-delay="1000"
+data-aos="fade-up"
+
+     data-aos-duration="2000"
+
+     sx={{ paddingLeft: "8%", paddingRight: "8%", paddingTop: "4rem", paddingBottom: "4rem",
+ // data-aos="fade-up"
 
 
      }}>

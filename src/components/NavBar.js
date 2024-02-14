@@ -35,7 +35,14 @@ const NavBar = () => {
               },
             }}
           >
+          <NavLink
+
+to="/"
+style={{cursor:'pointer'}}
+
+>
             <img src={Logo} alt="Logo" width={"130rem"} />
+            </NavLink>
           </Box>
           <Box
             sx={{
@@ -44,7 +51,16 @@ const NavBar = () => {
               },
             }}
           >
+          <NavLink
+
+                to="/"
+style={{cursor:'pointer'}}
+
+              >
             <img src={Logo} alt="Logo" width={"90rem"} />
+
+
+              </NavLink>
           </Box>
 
           {/* Mobile Menu */}
