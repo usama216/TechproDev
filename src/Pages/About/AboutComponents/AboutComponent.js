@@ -2,10 +2,10 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import UpparBanner from "../../../Assets/AboutUs/UpparBanner.svg";
 import LowerBanner from "../../../Assets/AboutUs/BannerDown.svg";
-import Web from "../../../Assets/AboutUs/WebAppAbout.svg";
-import Mobile from "../../../Assets/AboutUs/MobileAbout.svg";
-import SEO from "../../../Assets/AboutUs/SEOAbout.svg";
-import SMM from "../../../Assets/AboutUs/SMMabout.svg";
+import Web from "../../../Assets/AboutUs/WebAppAbout.png";
+import Mobile from "../../../Assets/AboutUs/MobileAbout.png";
+import SEO from "../../../Assets/AboutUs/SEOAbout.png";
+import SMM from "../../../Assets/AboutUs/SMMabout.png";
 
 const AboutComponent = () => {
   return (

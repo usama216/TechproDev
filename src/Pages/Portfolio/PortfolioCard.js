@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import LowerBanner from "../../Assets/AboutUs/BannerDown.svg";
-import PortfolioImage from "../../Assets/Portfolio/PortfolioImage.svg";
 import { PortfolioData } from "./PortfolioData";
 
 const PortfolioCard = () => {
@@ -38,9 +37,9 @@ const PortfolioCard = () => {
 
   const descriptionStyle ={
     width:'100%',
-    fontSize:'0.9rem',
+    fontSize:'0.8rem',
   "@media(max-width:600px)": {
-    fontSize: "0.9rem",
+    fontSize: "0.8rem",
   },
   }
   return (
@@ -64,6 +63,7 @@ const PortfolioCard = () => {
                       display="flex"
                       justifyContent="center"
                       flexDirection="column"
+                      alignItems={'center'}
                       gap={2}
                     >
                       <Box>

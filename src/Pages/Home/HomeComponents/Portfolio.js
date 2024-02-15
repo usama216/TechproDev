@@ -1,7 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 import { Box, Button, Typography } from "@mui/material";
-import PortfolioImage from "../../../Assets/Portfolio/PortfolioImage.svg";
 import { useNavigate } from "react-router-dom";
 import { PortfolioData } from "../../Portfolio/PortfolioData";
 
@@ -108,130 +107,128 @@ const Portfolio = () => {
         </Box>
       </Box>
 
-     <Box sx={{overflowX:'hidden',
-      "@media(max-width:480px)": {
-            paddingRight: "4%",
-
-            paddingRight:'4%',
-          },
-     }}>
-     <Box
+      <Box
         sx={{
-          paddingLeft: "8%",
-          marginRight: "-15%",
-
-          paddingBottom: "4rem",
+          overflowX: "hidden",
           "@media(max-width:480px)": {
-            paddingRight: "0%",
-
-            paddingRight:'0%',
-          },
-          "@media(max-width:779px) ": {
-            paddingRight: "8%",
-            marginRight: "-15%",
+            paddingRight: "4%",
           },
         }}
       >
-        <Slider {...settings}>
-          {PortfolioData.map((item, index) => (
-            <Box
-              key={index}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              paddingTop="4rem"
-              paddingLeft={"2rem"}
-              paddingRight={"2rem"}
-              gap={10}
-              sx={{
-                "@media(max-width:480px)": {
-            paddingLeft: "0rem",
+        <Box
+          sx={{
+            paddingLeft: "8%",
+            marginRight: "-15%",
 
-            paddingRight:'2rem',
-          },
-              }}
-            >
-              <Box>
-                <img
-                  src={item.pic}
-                  alt="web"
-                  width="100%"
-                  height="auto"
-                  style={{ borderRadius: "25px" }}
-                />
-              </Box>
+            paddingBottom: "4rem",
+            "@media(max-width:480px)": {
+              paddingRight: "0%",
+            },
+            "@media(max-width:779px) ": {
+              paddingRight: "8%",
+              marginRight: "-15%",
+            },
+          }}
+        >
+          <Slider {...settings}>
+            {PortfolioData.map((item, index) => (
               <Box
-                color="black"
+                key={index}
                 display="flex"
-                flexDirection="column"
-                gap={2}
-                marginTop={"1rem"}
-              >
-                <Typography variant="h1" fontSize="2rem" fontWeight="600">
-                  {item.title}
-                </Typography>
-                <Box display="flex" gap={2}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#ffc75d",
-                      "&:hover": {
-                        backgroundColor: "#ffc75d", // Set the text color to black on hover as well
-                      },
+                justifyContent="center"
+                alignItems="center"
+                paddingTop="4rem"
+                paddingLeft={"2rem"}
+                paddingRight={"2rem"}
+                gap={10}
+                sx={{
+                  "@media(max-width:480px)": {
+                    paddingLeft: "0rem",
 
-                      borderRadius: "25px",
-                      textTransform: "none ",
-                      color: "black",
-                      padding: "0.5rem 2rem",
-                    }}
-                  >
-                    {item.Tech1}
-                  </Button>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      "&:hover": {
-                        backgroundColor: "#ffc75d", // Set the text color to black on hover as well
-                      },
-                      backgroundColor: "#ffc75d",
-                      borderRadius: "25px",
-                      textTransform: "none ",
-                      color: "black",
-                      padding: "0.5rem 2rem",
-                    }}
-                  >
-                    {item.Tech2}
-                  </Button>
-                </Box>
-                <Typography
-                  width="100%"
-                  fontSize="0.9rem"
-                  className="HomeDescription"
-                >
-                  {item.Description}
-                </Typography>
+                    paddingRight: "2rem",
+                  },
+                }}
+              >
                 <Box>
-                  <Button
-                    onClick={handleButtonClick}
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#00A0D5",
-                      borderRadius: "25px",
-                      textTransform: "none ",
-                      color: "white",
-                      padding: "0.5rem 1rem",
-                    }}
+                  <img
+                    src={item.pic}
+                    alt="web"
+                    width="100%"
+                    height="auto"
+                    style={{ borderRadius: "25px" }}
+                  />
+                </Box>
+                <Box
+                  color="black"
+                  display="flex"
+                  flexDirection="column"
+                  gap={2}
+                  marginTop={"1rem"}
+                >
+                  <Typography variant="h1" fontSize="2rem" fontWeight="600">
+                    {item.title}
+                  </Typography>
+                  <Box display="flex" gap={2}>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        backgroundColor: "#ffc75d",
+                        "&:hover": {
+                          backgroundColor: "#ffc75d", // Set the text color to black on hover as well
+                        },
+
+                        borderRadius: "25px",
+                        textTransform: "none ",
+                        color: "black",
+                        padding: "0.5rem 2rem",
+                      }}
+                    >
+                      {item.Tech1}
+                    </Button>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        "&:hover": {
+                          backgroundColor: "#ffc75d", // Set the text color to black on hover as well
+                        },
+                        backgroundColor: "#ffc75d",
+                        borderRadius: "25px",
+                        textTransform: "none ",
+                        color: "black",
+                        padding: "0.5rem 2rem",
+                      }}
+                    >
+                      {item.Tech2}
+                    </Button>
+                  </Box>
+                  <Typography
+                    width="100%"
+                    fontSize="0.9rem"
+                    className="HomeDescription"
                   >
-                    View More
-                  </Button>
+                    {item.Description}
+                  </Typography>
+                  <Box>
+                    <Button
+                      onClick={handleButtonClick}
+                      variant="contained"
+                      sx={{
+                        backgroundColor: "#00A0D5",
+                        borderRadius: "25px",
+                        textTransform: "none ",
+                        color: "white",
+                        padding: "0.5rem 1rem",
+                      }}
+                    >
+                      View More
+                    </Button>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </Box>
       </Box>
-
-     </Box>
     </>
   );
 };

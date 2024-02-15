@@ -1,6 +1,6 @@
 // portfolioItems.js
 
-import PortfolioImage from "../../Assets/Portfolio/PortfolioImage.svg";
+import PortfolioImage from "../../Assets/Portfolio/PortfolioImage.png";
 
 export const PortfolioData = [
   {
