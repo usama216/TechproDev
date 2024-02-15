@@ -68,7 +68,7 @@ const testimonialsData = [
 
 const TestimonialCard = ({ id, role, companyName, content, rating }) => (
 
-   <Grid item key={id} xs={12} sm={5.5} md={3.7} lg={3.7} >
+   <Grid item key={id} xs={12} sm={5.5} md={3.5} lg={3.7} >
     <Box sx={{ padding: "2rem", boxShadow: "5px 5px 4px gray", borderRadius: "15px" }}>
       <Box sx={{ display: "flex", alignItems: "center", paddingBottom: "1rem" }}>
         <Box sx={{ width: "25%", height: "auto", borderRadius: "50%", overflow: "hidden", "@media(min-width:600px) and (max-width:768px)": {

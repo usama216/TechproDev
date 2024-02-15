@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
-import { Routes, Route, useLocation, Link} from 'react-router-dom'
+import { Routes, Route, useLocation} from 'react-router-dom'
 import Index from './Pages/Home/Index';
 import PortfolioIndex from './Pages/Portfolio/PortfolioIndex';
 import AboutIndex from './Pages/About/AboutIndex';
@@ -36,7 +36,7 @@ function App() {
     <Route path='/' element={<Index/>} exact/>
     <Route path='/portfolio' element={<PortfolioIndex/>}/>
     <Route path='/aboutus' element={<AboutIndex/>}/>
-    <Route path='/services' element={<ServicesIndex/>}/>
+    <Route path='/services' element={<ServicesIndex text='SERVICES'/>}/>
     <Route path='/blog' element={<BlogsIndex/>}/>
     <Route path='/contactus' element={<ContactusIndex/>}/>
 

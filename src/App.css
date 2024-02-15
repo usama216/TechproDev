@@ -3,10 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 
+
+
   }
   html {
     font-size: calc (10px + 1vmin);
+
   }
+
 
   /* NavBar.css */
 
@@ -66,5 +70,30 @@
   .custom-navlink.active {
     color: white !important; /* Ensure the color is always white for the custom NavLink */
   }
+/* ----------------Limit the word on blog page description------- */
+@media (max-width: 600px) {
+  .description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+  }
 
- 
+
+}
+.HomeDescription {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+
+
+
+
+
+
+

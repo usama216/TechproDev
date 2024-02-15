@@ -44,9 +44,11 @@ const HeroSection = () => {
               backgroundSize: "cover",
               height: "50vh",
             },
-            "@media(min-width:780px) ": {
+            "@media(min-width:780px) and (max-width:1024px) ": {
               backgroundSize: "cover",
+              height: "20vh",
             },
+
           }}
         >
           <Box
@@ -75,7 +77,9 @@ const HeroSection = () => {
               "@media(min-width:769px) and (max-width:1024px)": {
                 paddingLeft: "10%",
                 paddingRight: "10%",
+                minHeight:'15vh'
               },
+
             }}
           >
             <Box
@@ -88,7 +92,7 @@ const HeroSection = () => {
                 paddingRight: "15%",
 
                 "@media(max-width:480px)": {
-                  minHeight: "8rem",
+                  minHeight: "7rem",
                   paddingLeft: "10%",
                   paddingRight: "10%",
                 },
@@ -99,7 +103,7 @@ const HeroSection = () => {
                   paddingRight: "6%",
                 },
                 "@media(min-width:901px) and (max-width:1024px)": {
-                  minHeight: "4rem",
+                  minHeight: "7rem",
                   paddingLeft: "6%",
                   paddingRight: "6%",
                 },
@@ -218,7 +222,7 @@ const HeroSection = () => {
                     "@media(min-width:901px) and (max-width:1024px)": {
                       fontSize: "2rem",
                       width: "100%",
-                      paddingLeft: "0%",
+                      paddingLeft: "6%",
                       paddingRight: "0%",
                     },
                   }}
@@ -249,10 +253,11 @@ const HeroSection = () => {
                   marginTop: "1rem",
                 },
                 "@media(min-width:901px) and (max-width:1024px)": {
-                  fontSize: "1.3rem",
+                  fontSize: "0.9rem",
                   width: "100%",
-                  paddingLeft: "0%",
+                  paddingLeft: "15%",
                   paddingRight: "0%",
+                  marginTop:'2rem'
                 },
               }}
             >
@@ -298,6 +303,9 @@ const HeroSection = () => {
                 },
                 "@media(min-width:480px) and (max-width:780px)": {
                   marginTop: "1rem",
+                },
+                "@media(min-width:781px) and (max-width:1024px)": {
+                  marginTop: "0.5rem",
                 },
               }}
             >

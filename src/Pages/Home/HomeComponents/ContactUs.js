@@ -1,5 +1,5 @@
-import { LocationCity, Phone } from "@mui/icons-material";
-import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import { Phone } from "@mui/icons-material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import React, {useState} from "react";
 import Map from "../../../Assets/MAP.JPG";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
@@ -92,7 +92,7 @@ data-aos-delay="1000"
 
      data-aos-duration="2000">
           <Grid container color={"white"} marginTop={"3rem"}>
-            <Grid item lg={"6"} sx={{order:{xs:2, md:1}, '@media(max-width:480px)':{marginTop:'3rem'}}}>
+            <Grid item md={12} lg={6} sx={{order:{xs:2, md:1 }, '@media(max-width:480px)':{marginTop:'3rem'}}}>
               <Typography  sx={{
                     fontSize: "2rem",
                     fontWeight: "550",
@@ -144,7 +144,7 @@ data-aos-delay="1000"
               </Box>
             </Grid>
 
-            <Grid item lg={6} sm={12} sx={{order:{xs:1, md:2}}}>
+            <Grid item md={12} lg={6} sm={12} sx={{order:{xs:1, md:2}}}>
               <Box    sx={{
                   "@media(max-width:480px)": {
                     display: "flex",

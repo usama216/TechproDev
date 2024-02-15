@@ -4,21 +4,23 @@ import UpparBanner from '../../../Assets/AboutUs/UpparBanner.svg'
 
 
 const BlogItem = ({ title, category1, category2, description, author, date }) => (
-  <Box sx={{boxShadow:'1px 2px 9px #cbcbcb'}}>
-    <Box>
-      <img src={Blog1} alt="Blog 1 image" style={{ objectFit: 'cover' }} width={'100%'} />
+  <Box sx={{ boxShadow: '1px 2px 9px #cbcbcb', height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Box style={{ flex: 1, overflow: 'hidden' }}>
+      <img src={Blog1} alt="Blog pic" style={{ objectFit: 'cover', width: '100%' }} />
     </Box>
 
-    <Box paddingLeft={"1.5rem"} marginTop={"1rem"} paddingBottom='2rem'>
+    <Box paddingX={"1.5rem"} paddingTop={"1rem"} paddingBottom='2rem' style={{ flex: 1, overflowY: 'auto' }}>
       <Box display={"flex"} gap={2}>
         <Button
           variant="contained"
           sx={{
             backgroundColor: "#ffc75d",
+            '&:hover':{
+backgroundColor:'#ffc75d'
+            },
             borderRadius: "5px",
             textTransform: "none",
             color: "black",
-
           }}
         >
           {category1}
@@ -26,11 +28,13 @@ const BlogItem = ({ title, category1, category2, description, author, date }) =>
         <Button
           variant="contained"
           sx={{
+            '&:hover':{
+backgroundColor:'#ffc75d'
+            },
             backgroundColor: "#ffc75d",
             borderRadius: "5px",
             textTransform: "none",
             color: "black",
-
           }}
         >
           {category2}
@@ -40,18 +44,26 @@ const BlogItem = ({ title, category1, category2, description, author, date }) =>
         <Typography
           sx={{ lineHeight: "30px" }}
           variant="h1"
-          fontSize={"2rem"}
+          fontSize={"1.3rem"}
         >
           {title}
         </Typography>
-        <Typography>
-          {description}
-        </Typography>
+        <Box style={{ maxHeight: '150px', overflow: 'hidden' }}>
+          <Typography color='#6C757D'
+          fontSize={"0.9rem"}
+
+          >
+            {description}
+          </Typography>
+        </Box>
       </Box>
       <Box display={"flex"} gap={2} alignItems={"center"}>
-        <Avatar />
-        <Typography>{author}</Typography>
-        <Typography>{date}</Typography>
+        <Box gap={1} display={'flex'} alignItems={'center'}>
+        <Avatar height='50px' width='50px'/>
+        <Typography color='#000000' fontSize={"0.8rem"}>{author}</Typography>
+        </Box>
+        <hr width='10%'/>
+        <Typography color='#6C757D' fontSize={"0.8rem"}>{date}</Typography>
       </Box>
     </Box>
   </Box>
@@ -60,17 +72,17 @@ const BlogItem = ({ title, category1, category2, description, author, date }) =>
 const BlogComponent = () => {
   const blogs = [
     {
-      title: "Blog 1",
+      title: "Blog ",
       category1: "Development",
       category2: "AI",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iure.",
-      author: "Author Name",
-      date: "Date posted",
+      author: "Usman Khalil",
+      date: "Feb 15, 2024",
     },
     {
-        title: "Blog 1",
-        category1: "Development",
-        category2: "AI",
+        title: "Blog 2",
+        category1: "Mobile ",
+        category2: "SMM",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iure.",
         author: "Author Name",
         date: "Date posted",
@@ -90,12 +102,12 @@ const BlogComponent = () => {
         date: "Date posted",
       },
       {
-        title: "Blog 1",
+        title: "Blog",
         category1: "Development",
-        category2: "AI",
+        category2: "0okkk",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iure.",
         author: "Author Name",
-        date: "Date posted",
+        date: "Date hehehe",
       },{
         title: "Blog 1",
         category1: "Development",
@@ -175,16 +187,16 @@ data-aos-delay="500"
       </Box>
 
         <Grid container spacing={4} paddingLeft={'10%'} paddingRight={'10%'} marginTop={'4rem'}
-
-        >
-      {blogs.map((blog, index) => (
-        <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={index}
-        data-aos="fade-up"
+data-aos="fade-up"
         // data-aos="flip-down"
      data-aos-easing="ease-out-cubic"
 data-aos-delay="500"
 
      data-aos-duration="2000"
+        >
+      {blogs.map((blog, index) => (
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={index}
+
         >
           <Box>
             <BlogItem {...blog} />

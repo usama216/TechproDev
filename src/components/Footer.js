@@ -17,7 +17,7 @@ const Footer = () => {
   const handlePhoneClick = (phoneNumber) => {
     window.location.href = `tel:${phoneNumber}`;
   };
-  const websiteURL = "https://www.techprodev.com/";
+  
   const emailAddress = "info@techprodev.com";
 
   const handleEmailClick = () => {
@@ -193,7 +193,7 @@ const Footer = () => {
                   flexDirection={"column"}
                   paddingLeft="1rem"
                 >
-                
+
                   <Typography
                     sx={{ fontSize: "1rem", color: "black", cursor: "pointer" }}
                     onClick={handleEmailClick}
