@@ -7,7 +7,6 @@ import Linkedin from "../Assets/SocialIcons/linkedin.svg";
 import twitter from "../Assets/SocialIcons/twitter.svg";
 import Divider from "@mui/material/Divider";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
-import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import { Phone } from "@mui/icons-material";
 
 const Footer = () => {
@@ -17,7 +16,7 @@ const Footer = () => {
   const handlePhoneClick = (phoneNumber) => {
     window.location.href = `tel:${phoneNumber}`;
   };
-  
+
   const emailAddress = "info@techprodev.com";
 
   const handleEmailClick = () => {
@@ -138,7 +137,7 @@ const Footer = () => {
               },
             }}
           >
-            <Grid item lg={3.5} sm={12}>
+            <Grid item lg={6} sm={12}>
               <Box
                 display={"flex"}
                 alignItems={"center"}
@@ -174,7 +173,7 @@ const Footer = () => {
               </Box>
             </Grid>
 
-            <Grid item lg={3.5} sm={12}>
+            <Grid item lg={6} sm={12}>
               <Box
                 display={"flex"}
                 alignItems={"center"}
@@ -203,7 +202,7 @@ const Footer = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item lg={5} sm={12}>
+            {/* <Grid item lg={5} sm={12}>
               <Box
                 display={"flex"}
                 width="80%"
@@ -229,7 +228,7 @@ const Footer = () => {
                   R-690 Sector 7-D/3 Gulshan-e-Farooq, North Karachi{" "}
                 </Typography>
               </Box>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Box>
 

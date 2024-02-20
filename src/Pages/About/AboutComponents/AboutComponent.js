@@ -163,10 +163,21 @@ data-aos-delay="500"
                   },
                 }}
               >
-                <Typography variant="h2" fontSize={"2rem"} textAlign={"center"}>
+                <Typography variant="h2" fontSize={"2rem"} textAlign={"center"} fontWeight={'600'}
+                 sx={{
+                  "@media screen and (max-width: 480px)": {
+                    fontSize:'1.8rem'
+                  },
+                }}
+                >
                   What is TechProDev
                 </Typography>
-                <Typography width={"100%"} fontSize={"0.9rem"}>
+                <Typography width={"100%"} fontSize={"0.9rem"}  marginTop={'1rem'}
+
+                sx={{'@media(max-width:480px)':{
+                  textAlign:'center'
+                }}}
+                >
                   Welcome to TechProDev, the ultimate nexus where innovation
                   harmonizes seamlessly with excellence across an array of
                   domains including web and mobile app development, visionary

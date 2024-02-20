@@ -241,21 +241,21 @@ const HeroSection = () => {
               marginTop={"5rem"}
               width="100%"
               sx={{
-                paddingLeft: "20%",
+                paddingLeft: "15%",
                 "@media(max-width:480px)": {
                   display: "none",
                 },
                 "@media(min-width:480px) and (max-width:900px)": {
                   fontSize: "0.9rem",
                   width: "100%",
-                  paddingLeft: "15%",
+                  paddingLeft: "0%",
                   paddingRight: "0%",
                   marginTop: "1rem",
                 },
                 "@media(min-width:901px) and (max-width:1024px)": {
                   fontSize: "0.9rem",
                   width: "100%",
-                  paddingLeft: "15%",
+                  paddingLeft: "0%",
                   paddingRight: "0%",
                   marginTop:'2rem'
                 },

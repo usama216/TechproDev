@@ -1,27 +1,61 @@
-import { Phone } from "@mui/icons-material";
+import React, { useState } from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
-import React, {useState} from "react";
-import Map from "../../../Assets/MAP.JPG";
+import { Phone } from "@mui/icons-material";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
-import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactUs = () => {
-  const mapLink = "https://maps.app.goo.gl/P9aHue6YQDzN1zbV7";
 
-  const handleClick = () => {
-    window.open(mapLink, "_blank");
-  };
+  // function onChange(value) {
+  //   console.log("Captcha value:", value);
+  // }
 
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState("");
+
+
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
+
+    // Validate name field to ensure it doesn't contain integers
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!name.trim() || !nameRegex.test(name.trim())) {
+      setNameError(!name.trim() ? "Please enter your name." : "Name cannot contain numbers.");
+      setTimeout(() => {
+        setNameError("");
+      }, 3000);
+      return;
+    }
+
+    // Validate email field to ensure it contains a valid email address format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim() || !emailRegex.test(email.trim())) {
+      setEmailError(!email.trim() ? "Please enter your email." : "Please enter a valid email address.");
+      setTimeout(() => {
+        setEmailError("");
+      }, 3000);
+      return;
+    }
+
+    // Check if message field is empty
+    if (!message.trim()) {
+      setMessageError("Please enter your message.");
+      setTimeout(() => {
+        setMessageError("");
+      }, 3000);
+      return;
+    }
     if (!name || !email || !message) {
       toast.error('Please fill all the required fields.');
     } else {
@@ -35,6 +69,66 @@ const ContactUs = () => {
     }
   };
 
+  // const handleSubmit = async (e) => {
+  //  e.preventDefault();
+
+  // // Validate name field to ensure it doesn't contain integers
+  // const nameRegex = /^[A-Za-z\s]+$/;
+  // if (!name.trim() || !nameRegex.test(name.trim())) {
+  //   setNameError(!name.trim() ? "Please enter your name." : "Name cannot contain numbers.");
+  //   setTimeout(() => {
+  //     setNameError("");
+  //   }, 3000);
+  //   return;
+  // }
+
+  // // Validate email field to ensure it contains a valid email address format
+  // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // if (!email.trim() || !emailRegex.test(email.trim())) {
+  //   setEmailError(!email.trim() ? "Please enter your email." : "Please enter a valid email address.");
+  //   setTimeout(() => {
+  //     setEmailError("");
+  //   }, 3000);
+  //   return;
+  // }
+
+  // // Check if message field is empty
+  // if (!message.trim()) {
+  //   setMessageError("Please enter your message.");
+  //   setTimeout(() => {
+  //     setMessageError("");
+  //   }, 3000);
+  //   return;
+  // }
+
+
+  //   // If all fields are filled, proceed with form submission
+  //   const data = { name, email, message };
+
+  //   try {
+  //     const response = await fetch('http://localhost:5000/send-email', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+
+  //     if (response.ok) {
+  //       toast.success('Your message has been sent to the TechProDev Team.');
+  //       setName('');
+  //       setEmail('');
+  //       setMessage('');
+  //     } else {
+  //       toast.error('Failed to send message. Please try again later.');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error sending message:', error);
+  //     toast.error('Failed to send message. Please try again later.');
+  //   }
+  // };
+
+
   return (
     <>
       <Box
@@ -47,10 +141,6 @@ const ContactUs = () => {
         }}
       >
         <Box
-         data-aos="fade-up"
-        //  data-aos="flip-down"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000"
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -69,14 +159,13 @@ const ContactUs = () => {
               },
             }}
           >
-            CONTACT US{" "}
+            CONTACT US
           </Typography>
           <Typography
             sx={{
               fontSize: "1rem",
               width: "80%",
               "@media (max-width: 480px)": {
-
                 width: "100%",
               },
             }}
@@ -85,83 +174,24 @@ const ContactUs = () => {
             fruition.
           </Typography>
         </Box>
-        <Box  // data-aos="fade-up"
-        data-aos="flip-down"
-     data-aos-easing="ease-out-cubic"
-data-aos-delay="1000"
+        <Box sx={{ paddingLeft: "20%", paddingRight: "20%",
+         "@media(max-width:600px)": {
+                     paddingLeft:'0%',
+                     paddingRight:'0%'
+                    },
 
-     data-aos-duration="2000">
+        }}>
           <Grid container color={"white"} marginTop={"3rem"}>
-            <Grid item md={12} lg={6} sx={{order:{xs:2, md:1 }, '@media(max-width:480px)':{marginTop:'3rem'}}}>
-              <Typography  sx={{
-                    fontSize: "2rem",
-                    fontWeight: "550",
-                    "@media(max-width:480px)": {textAlign:'center', fontSize: "1.5rem" },
-                  }}>
-                Our Address
-              </Typography>
-              <div style={{ marginTop: "2rem" }}>
-                <img
-                  src={Map}
-                  alt={"Location"}
-                  onClick={handleClick}
-                  style={{
-                    cursor: "pointer",
-                    maxWidth: "100%", // Set maximum width to 100% to make the image responsive
-                    height: "auto",
-                  }}
-                />
-              </div>
-
-              <Box
-                display={"flex"}
-                width="80%"
-                justifyContent={"center"}
-                alignItems={"center"}
-                marginTop={"1rem"}
-              >
-                <FmdGoodOutlinedIcon
-                  sx={{
-                    width: "3rem",
-                    height: "auto",
-                    "@media(max-width:480px)": {
-                      width: "1.5rem",
-                    },
-                  }}
-                />
-                <Typography
-                  sx={{
-                    fontSize: "1.5rem",
-                    lineHeight: "30px",
-                    "@media(max-width:480px)": {
-                      fontSize: "1rem",
-                      lineHeight: "20px",
-                    },
-                  }}
-                >
-                  R-690 Sector 7-D/3 Gulshan-e-Farooq, North Karachi
-                </Typography>
-              </Box>
-            </Grid>
-
-            <Grid item md={12} lg={6} sm={12} sx={{order:{xs:1, md:2}}}>
-              <Box    sx={{
-                  "@media(max-width:480px)": {
-                    display: "flex",
-                    alignItems: "start",
-                    flexDirection: "column",
-
-                    justifyContent: "center",
-                  },
-                }}>
-              <Box
-
-              >
+            <Grid item md={12} lg={12} sm={12}>
+              <Box>
                 <Typography
                   sx={{
                     fontSize: "2rem",
                     fontWeight: "550",
-                    "@media(max-width:480px)": {textAlign:'center', fontSize: "1.5rem" },
+                    "@media(max-width:480px)": {
+                      textAlign: "center",
+                      fontSize: "1.5rem",
+                    },
                   }}
                 >
                   Contact Details
@@ -200,21 +230,17 @@ data-aos-delay="1000"
                           }}
                         >
                           <Typography sx={{ fontSize: "1rem" }}>
-                          +92 334 3588617
+                            +92 334 3588617
                           </Typography>
                           <Typography sx={{ fontSize: "1rem" }}>
-                          +971 55 533 7567
+                            +971 55 533 7567
                           </Typography>
                         </Box>
                       </Box>
                     </Grid>
 
                     <Grid item lg={6} sm={6} md={6} xs={12}>
-                      <Box
-                        display={"flex"}
-                        alignItems={"center"}
-                        justifyContent={"center"}
-                      >
+                      <Box display={"flex"} alignItems={"center"}>
                         <LanguageOutlinedIcon
                           sx={{
                             width: "3rem",
@@ -230,10 +256,8 @@ data-aos-delay="1000"
                             "@media(max-width:480px)": {
                               marginTop: "1rem",
                             },
-
                           }}
                         >
-
                           <Typography sx={{ fontSize: "1rem" }}>
                             info@techprodev.com
                           </Typography>
@@ -241,140 +265,207 @@ data-aos-delay="1000"
                       </Box>
                     </Grid>
                   </Grid>
-
-                  {/* -------------------yeh box start-------- */}
-
-                  {/* -------------------yeh box end-------- */}
                 </Box>
+
                 <form
-      onSubmit={handleSubmit}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: "1rem",
-        "@media(max-width:480px)": { width: "100%" },
-      }}
-    >
-      <Box
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={"space-evenly"}
-        width={"100%"}
-        sx={{
-          "@media(max-width:480px)": {
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "start",
-          },
-        }}
-      >
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          width={"90%"}
-          sx={{
-            "@media(max-width:480px)": { width: "100%" },
-          }}
-        >
-          <label>Name</label>
-          <input
-            type={"text"}
-            placeholder="Your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+                  onSubmit={handleSubmit}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginTop: "1rem",
+                    "@media(max-width:480px)": { width: "100%" },
+                  }}
+                >
+                  <Box
+                    display={"flex"}
+                    alignItems={"center"}
+                    justifyContent={"space-evenly"}
+                    width={"100%"}
+                    sx={{
+                      "@media(max-width:480px)": {
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "start",
+                      },
+                    }}
+                  >
+                    <Box
+                      display={"flex"}
+                      flexDirection={"column"}
+                      width={"90%"}
+                      height={'5rem'}
 
-            style={{
-              marginTop: "1rem",
-              backgroundColor: "white",
-              borderRadius: "7px",
-              outline: "none",
-              height: "3rem",
-              width: "95%", // Set the width to 100%
-              border: "none",
-              padding: "1rem",
-              fontSize: "1rem",
-            }}
-          />
-        </Box>
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          width="90%"
-          sx={{
-            "@media(max-width:480px)": { width: "100%", marginTop: '1rem' },
-          }}
-        >
-          <label>Email</label>
-          <input
-            type={"text"}
-            placeholder="Your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+                      sx={{
+                        "@media(max-width:480px)": { width: "100%" },
+                      }}
+                    >
+                      <label>Name</label>
+                      <input
+                        type={"text"}
+                        placeholder="Your name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
 
-            style={{
-              marginTop: "1rem",
-              backgroundColor: "white",
-              borderRadius: "7px",
-              height: "3rem",
-              width: "95%", // Set the width to 100%
-              border: "none",
-              padding: "1rem",
-              fontSize: "1rem",
-              outline: "none",
-            }}
-          />
-        </Box>
-      </Box>
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        width="100%"
-        marginTop="2rem"
-      >
-        <label>Message</label>
-        <textarea
-          placeholder="Message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+                        style={{
+                          marginTop: "1rem",
+                          backgroundColor: "white",
+                          borderRadius: "7px",
+                          outline: "none",
+                          height: "3rem",
+                          width: "95%",
+                          border: "none",
+                          padding: "1rem",
+                          fontSize: "1rem",
+                        }}
+                      />
+                      {nameError && (
+                        <Typography
+                          variant="caption"
+                          color="error"
+                          fontSize={'0.8rem'}
+                          fontWeight={'600'}
+                          sx={{ marginTop: "0rem",
+                          "@media(max-width:600px)": {
+                  fontSize:'0.8rem',
 
-          style={{
-            marginTop: "1rem",
-            backgroundColor: "white",
-            borderRadius: "7px",
-            height: "15rem",
-            width: "95%", // Set the width to 100%
-            border: "none",
-            padding: "1rem",
-            fontSize: "1rem",
-            outline: "none",
-          }}
-        />
-      </Box>
+                    },
+                           }}
+                        >
+                          {nameError}
+                        </Typography>
+                      )}
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      flexDirection={"column"}
+                      width="90%"
+                      height={'5rem'}
+                      sx={{
+                        "@media(max-width:480px)": { width: "100%", marginTop: '1rem' },
+                      }}
+                    >
+                      <label>Email</label>
+                      <input
+                        type={"text"}
+                        placeholder="Your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
 
-      <Box>
-        <Button
-          type="submit"
-          variant="contained"
-          sx={{
-            marginTop: "3rem",
-            textTransform: "none",
-            fontSize: "1rem",
-            padding: '0.8rem 1.5rem',
-            borderRadius: '6px',
-            backgroundColor: "#51B5DC",
-            "&:hover": {
-              backgroundColor: "#1E4F8E",
-            },
-          }}
-        >
-          Send Message
-        </Button>
-      </Box>
-    </form>
+                        style={{
+                          marginTop: "1rem",
+                          backgroundColor: "white",
+                          borderRadius: "7px",
+                          height: "3rem",
+                          width: "95%",
+                          border: "none",
+                          padding: "1rem",
+                          fontSize: "1rem",
+                          outline: "none",
+                        }}
+                      />
+                      {emailError && (
+                        <Typography
+                        variant="caption"
+                          color="error"
+                          fontSize={'0.8rem'}
+                          fontWeight={'600'}
+                          sx={{ marginTop: "0rem",  "@media(max-width:600px)": {
+                  fontSize:'0.8rem',
 
-              </Box>
+                    }, }}
+                        >
+                          {emailError}
+                        </Typography>
+                      )}
+                    </Box>
+                  </Box>
+                  <Box
+                    display={"flex"}
+                    flexDirection={"column"}
+                    width="100%"
+                    marginTop="2rem"
+
+                  >
+                    <label>Message</label>
+                    <textarea
+                      placeholder="Message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+
+                      style={{
+                        marginTop: "1rem",
+                        backgroundColor: "white",
+                        borderRadius: "7px",
+                        height: "15rem",
+                        width: "100%",
+                        border: "none",
+                        padding: "1rem",
+                        fontSize: "1rem",
+                        outline: "none",
+                        "@media(max-width:600px)": {
+                 marginTop:'0rem'
+
+                    },
+                      }}
+                    />
+                    {messageError && (
+                      <Typography
+                      variant="caption"
+                          color="error"
+                          fontSize={'0.8rem'}
+                          fontWeight={'600'}
+                          sx={{ marginTop: "0rem",  "@media(max-width:600px)": {
+                  fontSize:'0.8rem',
+
+                    }, }}
+                      >
+                        {messageError}
+                      </Typography>
+                    )}
+
+
+                  </Box>
+
+                 {/* <Box marginTop={'3rem'}>
+                 <ReCAPTCHA
+
+              //  sitekey="6Lf_2HcpAAAAAGDcg_vqlep5uPP-Wf4vORg3yYZ_"
+               sitekey="6Ld9Angp
+               AAAAANOPtvSYc-Q8i8Wa7VMPefufzzHQ"
+              //  sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+
+
+
+
+               onChange={onChange}
+
+             />
+
+                 </Box> */}
+
+
+                  <Box>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      sx={{
+                        marginTop: "3rem",
+                        textTransform: "none",
+                        fontSize: "1rem",
+                        padding: '0.8rem 1.5rem',
+                        borderRadius: '6px',
+                        backgroundColor: "#51B5DC",
+                        "&:hover": {
+                          backgroundColor: "#1E4F8E",
+                        },
+                      }}
+                    >
+                      Send Message
+                    </Button>
+                  </Box>
+                </form>
               </Box>
             </Grid>
           </Grid>

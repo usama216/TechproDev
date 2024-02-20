@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import LowerBanner from "../../Assets/AboutUs/BannerDown.svg";
-import { PortfolioData } from "./PortfolioData";
+import { PortfolioData } from "../../Data/PortfolioData";
 
 const PortfolioCard = () => {
 

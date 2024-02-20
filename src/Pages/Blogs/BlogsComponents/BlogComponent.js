@@ -1,12 +1,14 @@
 import { Grid, Box, Button, Typography, Avatar } from "@mui/material";
-import Blog1 from '../../../Assets/Blogs/Blog1.png'
+
 import UpparBanner from '../../../Assets/AboutUs/UpparBanner.svg'
+import { BlogData } from "../../../Data/BlogData";
 
 
-const BlogItem = ({ title, category1, category2, description, author, date }) => (
+const BlogItem = ({pic, title, category1, category2, description, author, date }) => (
   <Box sx={{ boxShadow: '1px 2px 9px #cbcbcb', height: '100%', display: 'flex', flexDirection: 'column' }}>
     <Box style={{ flex: 1, overflow: 'hidden' }}>
-      <img src={Blog1} alt="Blog pic" style={{ objectFit: 'cover', width: '100%' }} />
+
+      <img src={pic} alt="Blog pic" style={{ objectFit: 'cover', width: '100%' }} />
     </Box>
 
     <Box paddingX={"1.5rem"} paddingTop={"1rem"} paddingBottom='2rem' style={{ flex: 1, overflowY: 'auto' }}>
@@ -70,54 +72,6 @@ backgroundColor:'#ffc75d'
 );
 
 const BlogComponent = () => {
-  const blogs = [
-    {
-      title: "Blog ",
-      category1: "Development",
-      category2: "AI",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iure.",
-      author: "Usman Khalil",
-      date: "Feb 15, 2024",
-    },
-    {
-        title: "Blog 2",
-        category1: "Mobile ",
-        category2: "SMM",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iure.",
-        author: "Author Name",
-        date: "Date posted",
-      },{
-        title: "Blog 1",
-        category1: "Development",
-        category2: "AI",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iure.",
-        author: "Author Name",
-        date: "Date posted",
-      },{
-        title: "Blog 1",
-        category1: "Development",
-        category2: "AI",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iure.",
-        author: "Author Name",
-        date: "Date posted",
-      },
-      {
-        title: "Blog",
-        category1: "Development",
-        category2: "0okkk",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iure.",
-        author: "Author Name",
-        date: "Date hehehe",
-      },{
-        title: "Blog 1",
-        category1: "Development",
-        category2: "AI",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iure.",
-        author: "Author Name",
-        date: "Date posted",
-      },
-    // Add more blog data objects as needed
-  ];
 
   return (
     <>
@@ -194,7 +148,7 @@ data-aos-delay="500"
 
      data-aos-duration="2000"
         >
-      {blogs.map((blog, index) => (
+      {BlogData.map((blog, index) => (
         <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={index}
 
         >

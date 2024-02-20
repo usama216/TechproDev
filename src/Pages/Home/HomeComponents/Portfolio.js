@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { PortfolioData } from "../../Portfolio/PortfolioData";
+import { PortfolioData } from "../../../Data/PortfolioData";
 
 const Portfolio = () => {
   const navigate = useNavigate(); // Get the navigate function from React Router
@@ -15,7 +15,8 @@ const Portfolio = () => {
     dots: false,
     autoplay: true,
     infinite: true,
-    speed: 600,
+    speed: 400,
+    pauseOnHover:false,
     arrows: false,
     slidesToShow: 3,
     slidesToScroll: 1,

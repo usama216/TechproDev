@@ -1,108 +1,59 @@
 import React from "react";
-import { Box, Grid, Rating, Stack, Typography,  useMediaQuery } from "@mui/material";
-import Mypic from "../../../Assets/Testimonials/mypic.png";
+import { Box, Rating, Stack, Typography, } from "@mui/material";
 
-const testimonialsData = [
-  // Add your testimonial data here
-  {
-    id: 1,
-    role: "Marketing Manager",
-    companyName: "Company 1",
-    content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: '5.0',
-  },
-  {
-    id: 2,
-    role: "Marketing Manager",
-    companyName: "Company 2",
-    content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: '5.0',
-  },
-  {
-    id: 3,
-    role: "Marketing Manager",
-    companyName: "Company 3",
-    content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: '5.0',
-  },
-  {
-    id: 4,
-    role: "Marketing Manager",
-    companyName: "Company 4",
-    content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: '5.0',
-  },
-  {
-    id: 5,
-    role: "Marketing Manager",
-    companyName: "Company 5",
-    content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: '5.0',
-  },{
-    id: 6,
-    role: "Marketing Manager",
-    companyName: "Company 6",
-    content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: '5.0',
-  },{
-    id: 7,
-    role: "Marketing Manager",
-    companyName: "Company 7",
-    content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: '5.0',
-  },{
-    id: 8,
-    role: "Marketing Manager",
-    companyName: "Company 8",
-    content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: '5.0',
-  },{
-    id: 9,
-    role: "Marketing Manager",
-    companyName: "Company 9",
-    content: "They communicated smoothly and were always available. Customers can expect a cost-effective and effective team.",
-    rating: '5.0',
-  },
-  // Add more testimonial data as needed
-];
-
-const TestimonialCard = ({ id, role, companyName, content, rating }) => (
-
-   <Grid item key={id} xs={12} sm={5.5} md={3.5} lg={3.7} >
-    <Box sx={{ padding: "2rem", boxShadow: "5px 5px 4px gray", borderRadius: "15px" }}>
-      <Box sx={{ display: "flex", alignItems: "center", paddingBottom: "1rem" }}>
-        <Box sx={{ width: "25%", height: "auto", borderRadius: "50%", overflow: "hidden", "@media(min-width:600px) and (max-width:768px)": {
-               width:'100%'
-
-              }, }}>
-          <img src={Mypic} alt="My Pic" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-        </Box>
-        <Box sx={{ paddingLeft: "1.5rem" }}>
-          <Typography fontWeight={600} fontSize={'1rem'} sx={{'@media(max-width:480px)':{fontSize:'0.9rem'}}}>{role}</Typography>
-          <Typography sx={{ color: "#1E4F8E", '@media(max-width:480px)':{fontSize:'0.9rem'} }} >{companyName}</Typography>
-        </Box>
-      </Box>
-      <Typography sx={{ color: "#0F65A0", textAlign: "center", fontSize:'1rem', lineHeight:'20px',
-        "@media(min-width:600px) and (max-width:768px)": {
-                fontSize:'0.8rem'
-
-
-              },
-
-       }}>{content}</Typography>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", paddingTop: "1rem" }}>
-        <Typography fontWeight={'600'} paddingRight={'0.5rem'}>{rating}</Typography>
-        <Stack spacing={1}>
-          <Rating  defaultValue={rating} precision={0.5} readOnly/>
-        </Stack>
-      </Box>
-    </Box>
-  </Grid>
-
-);
+import Slider from "react-slick";
+import {TestimonialsData} from '../../../Data/TestimonialsData'
 
 const Testimonials = () => {
-  const isMobile = useMediaQuery("(max-width: 600px)");
+  const settings = {
+    dots: false,
+    autoplay: true,
+    infinite: true,
+    speed: 400,
+    pauseOnHover:false,
+    arrows: false,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+
+
 
   return (
     <Box
@@ -125,13 +76,56 @@ data-aos="fade-up"
         </Typography>
       </Box>
 
-      <Grid container gap={"2rem"} marginTop={"3rem"} sx={{"@media(max-width:779px) ": {
-              gap:'1rem'
-            },}}>
-        {testimonialsData.slice(0, isMobile ? 3 : undefined).map((testimonial, index) => (
-          <TestimonialCard key={index} {...testimonial} />
+  <Box padding={'4rem'}
+  sx={{
+    '@media(max-width:600px)':{
+      padding:'0rem'
+    }
+  }}
+
+  >
+  <Slider {...settings}>
+
+
+       {TestimonialsData.map(({id,pic, role, companyName, content, rating}) => (
+
+   <Box gap={10} paddingTop={'3rem'}>
+    <Box sx={{ padding: "2rem",  borderRadius: "15px" }} gap={10} >
+      <Box sx={{ display: "flex", alignItems: "center", paddingBottom: "1rem" }}>
+        <Box sx={{ width: "25%", height: "auto", borderRadius: "50%", overflow: "hidden", "@media(min-width:600px) and (max-width:768px)": {
+               width:'100%'
+
+              }, }}>
+          <img src={pic} alt="My Pic" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </Box>
+        <Box sx={{ paddingLeft: "1.5rem" }}>
+          <Typography fontWeight={600} fontSize={'1rem'} sx={{'@media(max-width:480px)':{fontSize:'0.9rem'}}}>{role}</Typography>
+          <Typography sx={{ color: "#1E4F8E", '@media(max-width:480px)':{fontSize:'0.9rem'} }} >{companyName}</Typography>
+        </Box>
+      </Box>
+      <Typography sx={{ color: "#0F65A0", textAlign: "center", fontSize:'1rem', lineHeight:'20px',
+        "@media(min-width:600px) and (max-width:768px)": {
+                fontSize:'0.8rem'
+
+
+              },
+
+       }}>{content}</Typography>
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", paddingTop: "1rem" }}>
+        <Typography fontWeight={'600'} paddingRight={'0.5rem'}>{rating}</Typography>
+        <Stack spacing={1}>
+          <Rating  defaultValue={rating} precision={0.5} readOnly/>
+        </Stack>
+      </Box>
+    </Box>
+
+   </Box>
+
         ))}
-      </Grid>
+
+
+   </Slider>
+  </Box>
     </Box>
   );
 };

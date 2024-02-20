@@ -4,15 +4,15 @@ import Mobile from "../Assets/Expertise/Mobile.svg";
 import WebApp from "../Assets/Expertise/WebApp.svg";
 import SMM from "../Assets/Expertise/SMM.svg";
 import SEO from "../Assets/Expertise/SEO.svg";
-import SMMIcon from "../Assets/Expertise/SMMIcon.svg";
-import SEOIcon from "../Assets/Expertise/SEOIcon.svg";
-import WebIcon from "../Assets/Expertise/WebIcon.svg";
-import MobIcon from "../Assets/Expertise/MobIcon.svg";
+import SMMIcon from "../Assets/Expertise/SMMIcon.png";
+import SEOIcon from "../Assets/Expertise/SEOIcon.png";
+import WebIcon from "../Assets/Expertise/WebIcon.png";
+import MobIcon from "../Assets/Expertise/MobIcon.png";
 import { useNavigate } from "react-router-dom";
-import WebIconWhite from "../Assets/Expertise/WebIconWhite.svg";
-import MobIconWhite from "../Assets/Expertise/MobIconWhite.svg";
-import SEOIconWhite from "../Assets/Expertise/SEOIconWhite.svg";
-import SMMIconWhite from "../Assets/Expertise/SMMIconWhite.svg";
+import WebIconWhite from "../Assets/Expertise/WebIconWhite.png";
+import MobIconWhite from "../Assets/Expertise/MobIconWhite.png";
+import SEOIconWhite from "../Assets/Expertise/SEOIconWhite.png";
+import SMMIconWhite from "../Assets/Expertise/SMMIconWhite.png";
 
 const OurServices = () => {
     const storedActiveIndex = parseInt(localStorage.getItem("activeIndex")) || 0;
